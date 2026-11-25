@@ -12,18 +12,17 @@ export function FaqEnquiry({ faqs }: { faqs: Faq[] }) {
       <div className="container-x grid gap-14 lg:grid-cols-2">
         <div>
           <Reveal>
-            <span className="eyebrow bg-white">FAQs</span>
-            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Frequently Asked <span className="text-lime-700">Questions</span></h2>
+            <span className="eyebrow">FAQs</span>
+            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Frequently Asked <span className="text-muted">Questions</span></h2>
           </Reveal>
           <Reveal delay={0.1} className="mt-10"><FaqList faqs={faqs} /></Reveal>
         </div>
         <Reveal delay={0.15} id="enquiry">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-ink p-7 sm:p-10">
-            <div className="pointer-events-none absolute -top-20 -right-20 size-72 rounded-full bg-lime/20 blur-3xl" />
+          <div className="relative overflow-hidden rounded-xl bg-ink p-7 sm:p-10">
             <div className="relative flex items-center gap-4">
-              <Image src="/images/team/reception-team.png" alt="" width={80} height={80} className="size-16 rounded-2xl object-cover" />
+              <Image src="/images/team/reception-team.png" alt="" width={80} height={80} className="size-16 rounded-lg object-cover" />
               <div>
-                <p className="text-xs font-bold tracking-[0.14em] text-lime uppercase">Enquiry form</p>
+                <p className="text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Enquiry form</p>
                 <h2 className="h-display mt-1 text-3xl text-white sm:text-4xl">Ready to get started with Fortius</h2>
               </div>
             </div>

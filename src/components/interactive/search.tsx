@@ -91,13 +91,13 @@ function Palette({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-[90] flex items-start justify-center px-4 pt-[12vh]" role="dialog" aria-modal="true" aria-label="Search">
-      <motion.button aria-label="Close search" className="absolute inset-0 bg-ink/40 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} />
+      <motion.button aria-label="Close search" className="absolute inset-0 bg-ink/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} />
       <motion.div
         initial={{ opacity: 0, y: -16, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -10, scale: 0.98 }}
         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-lift"
+        className="relative w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-lift"
         onKeyDown={onKey}
       >
         <div className="flex items-center gap-3 border-b border-line px-5">
@@ -125,9 +125,9 @@ function Palette({ onClose }: { onClose: () => void }) {
                   type="button"
                   onMouseMove={() => setActive(i)}
                   onClick={() => go(r)}
-                  className={cn("flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-left transition-colors", i === active && "bg-lime-50")}
+                  className={cn("flex w-full items-center gap-4 rounded-lg px-4 py-3 text-left transition-colors", i === active && "bg-lime-50")}
                 >
-                  <span className={cn("grid size-10 shrink-0 place-items-center rounded-xl", i === active ? "bg-lime text-ink" : "bg-mist text-muted")}><I className="size-[18px]" /></span>
+                  <span className={cn("grid size-10 shrink-0 place-items-center rounded-md", i === active ? "bg-lime text-white" : "bg-mist text-muted")}><I className="size-[18px]" /></span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-semibold">{r.title}</span>
                     {r.sub && <span className="block truncate text-sm text-muted">{r.sub}</span>}

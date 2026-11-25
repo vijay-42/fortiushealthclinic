@@ -86,7 +86,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
     <div className="fixed inset-0 z-[80] flex justify-end" role="dialog" aria-modal="true" aria-label="Book an appointment">
       <motion.button
         aria-label="Close"
-        className="absolute inset-0 bg-ink/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-ink/50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -100,9 +100,9 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ type: "spring", stiffness: 260, damping: 32 }}
-        className="relative flex h-full w-full max-w-xl flex-col overflow-y-auto bg-cream outline-none sm:rounded-l-[2rem]"
+        className="relative flex h-full w-full max-w-xl flex-col overflow-y-auto bg-cream outline-none sm:rounded-l-xl"
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-cream/90 px-6 py-5 backdrop-blur sm:px-8">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-cream/90 px-6 py-5 sm:px-8">
           <div>
             <p className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Book an appointment</p>
             <p className="mt-1 flex items-center gap-1.5 text-sm text-muted"><Lock className="size-3.5" /> 100% confidential</p>
@@ -114,12 +114,12 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
 
         {status === "done" ? (
           <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }} className="grid size-20 place-items-center rounded-full bg-lime text-ink shadow-glow">
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }} className="grid size-20 place-items-center rounded-full bg-lime text-white">
               <Check className="size-10" strokeWidth={3} />
             </motion.div>
             <h3 className="h-display mt-8 text-3xl">Thank you, {form.name.split(" ")[0]}.</h3>
             <p className="mt-3 max-w-sm text-muted">Our team will call you shortly on {form.phone} to confirm your appointment at our {branchObj.name} clinic.</p>
-            <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white">
+            <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 font-semibold text-white">
               <MessageCircle className="size-5" /> Continue on WhatsApp
             </a>
             <button onClick={onClose} className="mt-4 text-sm font-semibold text-muted underline underline-offset-4">Close</button>
@@ -130,7 +130,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
             <ol className="mb-8 flex items-center gap-2">
               {steps.map((s, i) => (
                 <li key={s} className="flex flex-1 items-center gap-2">
-                  <span className={cn("grid size-8 shrink-0 place-items-center rounded-full text-sm font-bold transition-colors", i < step ? "bg-lime text-ink" : i === step ? "bg-ink text-white" : "bg-white text-muted")}>
+                  <span className={cn("grid size-8 shrink-0 place-items-center rounded-full text-sm font-bold transition-colors", i < step ? "bg-lime text-white" : i === step ? "bg-ink text-white" : "bg-white text-muted")}>
                     {i < step ? <Check className="size-4" strokeWidth={3} /> : i + 1}
                   </span>
                   <span className={cn("text-sm font-semibold", i === step ? "text-ink" : "text-muted")}>{s}</span>
@@ -150,7 +150,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                         key={c.id}
                         type="button"
                         onClick={() => { setConcern(c.id); setStep(1); }}
-                        className={cn("rounded-full border px-4 py-2.5 text-sm font-semibold transition", concern === c.id ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-lime hover:bg-lime-50")}
+                        className={cn("rounded-md border px-4 py-2.5 text-sm font-semibold transition", concern === c.id ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-lime hover:bg-lime-50")}
                       >
                         {c.label}
                       </button>
@@ -169,11 +169,11 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                         key={b.id}
                         type="button"
                         onClick={() => setBranch(b.id)}
-                        className={cn("flex gap-4 rounded-2xl border-2 bg-white p-5 text-left transition", branch === b.id ? "border-lime shadow-glow" : "border-transparent shadow-soft hover:border-lime-200")}
+                        className={cn("flex gap-4 rounded-lg border-2 bg-white p-5 text-left transition", branch === b.id ? "border-lime" : "border-transparent shadow-soft hover:border-lime-200")}
                       >
-                        <span className={cn("grid size-11 shrink-0 place-items-center rounded-xl", branch === b.id ? "bg-lime text-ink" : "bg-mist")}><MapPin className="size-5" /></span>
+                        <span className={cn("grid size-11 shrink-0 place-items-center rounded-md", branch === b.id ? "bg-lime text-white" : "bg-mist")}><MapPin className="size-5" /></span>
                         <span>
-                          <span className="flex items-center gap-2 font-bold">{b.name} <span className="rounded-full bg-mist px-2 py-0.5 text-[0.7rem] font-semibold text-muted uppercase">{b.label}</span></span>
+                          <span className="flex items-center gap-2 font-bold">{b.name} <span className="rounded-md bg-mist px-2 py-0.5 text-[0.7rem] font-semibold text-muted uppercase">{b.label}</span></span>
                           <span className="mt-1 block text-sm text-muted">{b.address}</span>
                         </span>
                       </button>
@@ -181,7 +181,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                   </div>
                   <div className="mt-8 flex justify-between">
                     <button type="button" onClick={() => setStep(0)} className="inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
-                    <button type="button" onClick={() => setStep(2)} className="inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 font-semibold text-white">Continue <ArrowRight className="size-4" /></button>
+                    <button type="button" onClick={() => setStep(2)} className="inline-flex h-12 items-center gap-2 rounded-md bg-ink px-6 font-semibold text-white">Continue <ArrowRight className="size-4" /></button>
                   </div>
                 </motion.div>
               )}
@@ -200,13 +200,13 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                   </div>
                   {error && <p className="mt-4 text-sm font-semibold text-red-600" role="alert">{error}</p>}
                   {status === "error" && <p className="mt-4 text-sm font-semibold text-red-600" role="alert">Something went wrong. Please call us or use WhatsApp.</p>}
-                  <button type="submit" disabled={status === "sending"} className="mt-6 inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-lime font-bold text-ink shadow-glow transition hover:bg-lime-600 hover:text-white disabled:opacity-60">
+                  <button type="submit" disabled={status === "sending"} className="mt-6 inline-flex h-14 w-full items-center justify-center gap-2 rounded-md bg-lime font-bold text-white transition hover:bg-lime-600 hover:text-white disabled:opacity-60">
                     {status === "sending" ? "Sending…" : "Consult Now to Fortius"} <ArrowRight className="size-5" />
                   </button>
                   <div className="my-5 flex items-center gap-3 text-xs font-semibold text-muted uppercase"><span className="h-px flex-1 bg-line" /> or <span className="h-px flex-1 bg-line" /></div>
                   <div className="grid grid-cols-2 gap-3">
-                    <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] font-semibold text-white"><MessageCircle className="size-5" /> WhatsApp</a>
-                    <a href={`tel:${branchObj.phone.tel}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white font-semibold shadow-soft"><Phone className="size-4" /> Call clinic</a>
+                    <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] font-semibold text-white"><MessageCircle className="size-5" /> WhatsApp</a>
+                    <a href={`tel:${branchObj.phone.tel}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white font-semibold shadow-soft"><Phone className="size-4" /> Call clinic</a>
                   </div>
                   <button type="button" onClick={() => setStep(1)} className="mt-6 inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
                 </motion.form>
@@ -225,7 +225,7 @@ export function Field({
   label: string; value: string; onChange: (v: string) => void; type?: string; textarea?: boolean; required?: boolean; autoComplete?: string; dark?: boolean;
 }) {
   const cls = cn(
-    "peer w-full rounded-2xl border px-4 pt-6 pb-2 outline-none transition placeholder-transparent focus:ring-4",
+    "peer w-full rounded-lg border px-4 pt-6 pb-2 outline-none transition placeholder-transparent focus:ring-4",
     dark ? "border-white/15 bg-white/5 text-white focus:border-lime focus:ring-lime/20" : "border-line bg-white text-ink focus:border-lime focus:ring-lime/20",
   );
   return (

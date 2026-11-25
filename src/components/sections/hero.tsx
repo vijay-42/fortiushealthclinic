@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Award, CalendarCheck, Lock, Sparkles } from "lucide-react";
+import { ArrowRight, Award, CalendarCheck, Lock, MapPin, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 import { doctor, site } from "@/content/site";
@@ -14,25 +14,17 @@ export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const yImg = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 120]);
-  const yCard = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]);
+  const yImg = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 60]);
   const { open } = useBooking();
 
   const words = ["Best", "Sexologist", "Hospital"];
 
   return (
-    <section ref={ref} className="relative -mt-[5.25rem] overflow-hidden bg-cream pt-32 pb-20 lg:pt-40 lg:pb-28">
-      {/* Ambient shapes */}
-      <div className="pointer-events-none absolute -top-40 -left-40 size-[36rem] rounded-full bg-lime/25 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-20 size-[28rem] rounded-full bg-orange/15 blur-3xl" />
-      <svg className="pointer-events-none absolute inset-x-0 bottom-0 w-full text-white" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden>
-        <path fill="currentColor" d="M0 80c240 40 480 40 720 10s480-60 720-10v40H0z" />
-      </svg>
-
+    <section ref={ref} className="relative -mt-[4.5rem] overflow-hidden bg-cream pt-32 pb-20 lg:pt-40 lg:pb-28">
       <div className="container-x relative grid items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
         <div>
           <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="eyebrow">
-            <span className="size-1.5 rounded-full bg-lime-700" /> {site.heroTitle}
+            {site.heroTitle}
           </motion.span>
 
           <h1 className="h-display mt-6 text-[2.9rem] leading-[0.98] sm:text-7xl lg:text-[4.6rem]">
@@ -66,52 +58,51 @@ export function Hero() {
           </motion.ul>
         </div>
 
-        {/* Visual collage */}
-        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+        {/* Visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease }}
+          className="relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden rounded-xl bg-ink shadow-lift sm:aspect-square lg:aspect-[4/5] lg:max-w-none"
+        >
+          <motion.div style={{ y: yImg, scale: 1.12 }} className="absolute inset-0">
+            <Image src="/images/hero/reception.jpg" alt="Fortius Health Clinic reception, Bangalore" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover" />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/60" />
+
+          {/* Location label */}
           <motion.div
-            style={{ y: yImg }}
-            initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.2, ease }}
-            className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-lift sm:aspect-[5/5] lg:aspect-[4/5]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease }}
+            className="absolute top-4 left-4 flex items-center gap-2 rounded-md bg-white/95 px-3 py-2 text-[0.8rem] font-semibold text-ink sm:top-5 sm:left-5"
           >
-            <Image src="/images/gallery/exterior-2.jpg" alt="Fortius Health Clinic building, Bangalore" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
-            <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4 text-white">
-              <div>
-                <p className="text-xs font-bold tracking-[0.14em] text-lime-200 uppercase">Two clinics</p>
-                <p className="h-display mt-1 text-2xl">Richards Town · HSR Layout</p>
+            <MapPin className="size-3.5 text-lime-700" /> Richards Town &amp; HSR Layout
+          </motion.div>
+
+          {/* Doctor + award panel */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.65, ease }}
+            className="absolute inset-x-3 bottom-3 grid overflow-hidden rounded-lg bg-white shadow-lift sm:inset-x-5 sm:bottom-5 sm:grid-cols-2"
+          >
+            <div className="flex items-center gap-3 p-4">
+              <Image src={doctor.image} alt={doctor.name} width={56} height={56} className="size-12 shrink-0 rounded-full object-cover" />
+              <div className="min-w-0">
+                <p className="truncate font-semibold leading-tight">{doctor.name}</p>
+                <p className="mt-0.5 text-xs text-muted">{doctor.role}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 border-t border-line p-4 sm:border-t-0 sm:border-l">
+              <span className="grid size-12 shrink-0 place-items-center rounded-md bg-lime-50 text-lime-700"><Award className="size-5" /></span>
+              <div className="min-w-0">
+                <p className="text-sm leading-snug font-semibold">Most Trusted Sexologist of the Year</p>
+                <p className="mt-0.5 text-xs text-muted">IBARC Asia International</p>
               </div>
             </div>
           </motion.div>
-
-          {/* Doctor card */}
-          <motion.div
-            style={{ y: yCard }}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease }}
-            className="glass absolute top-10 -left-4 flex w-64 items-center gap-3 rounded-3xl p-3 pr-5 shadow-lift sm:-left-10"
-          >
-            <Image src={doctor.image} alt={doctor.name} width={64} height={64} className="size-14 rounded-2xl object-cover" />
-            <div>
-              <p className="font-bold leading-tight">{doctor.name}</p>
-              <p className="text-xs text-muted">{doctor.role}</p>
-            </div>
-          </motion.div>
-
-          {/* Award badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.85, ease }}
-            className="absolute -right-3 bottom-28 w-56 animate-float rounded-3xl bg-ink p-5 text-white shadow-lift sm:-right-8"
-          >
-            <span className="grid size-10 place-items-center rounded-xl bg-lime text-ink"><Award className="size-5" /></span>
-            <p className="mt-3 text-sm leading-snug font-semibold">“Most Trusted Sexologist of the Year”</p>
-            <p className="mt-1 text-xs text-white/60">IBARC Asia International</p>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -13,13 +13,13 @@ export async function BlogGrid() {
     <section className="py-24 lg:py-32">
       <div className="container-x">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Latest news" title={<>Browse our <span className="text-lime-700">articles</span></>} />
+          <SectionHeading eyebrow="Latest news" title={<>Browse our <span className="text-muted">articles</span></>} />
           <Button href={site.blogUrl} external variant="outline">Visit the blog <ArrowUpRight className="size-4" /></Button>
         </div>
         <Stagger className="mt-14 grid gap-6 lg:grid-cols-2">
           {lead && (
             <RevealItem className="lg:row-span-2">
-              <a href={lead.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-[2rem] bg-cream">
+              <a href={lead.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-xl bg-cream">
                 <div className="relative aspect-[16/9] overflow-hidden">
                   {lead.image && <Image src={lead.image} alt={lead.title} fill sizes="(min-width:1024px) 45vw, 90vw" className="object-cover transition duration-700 group-hover:scale-105" />}
                 </div>
@@ -35,8 +35,8 @@ export async function BlogGrid() {
           <div className="grid gap-4">
             {rest.slice(0, 4).map((p) => (
               <RevealItem key={p.href}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="group flex gap-5 rounded-3xl p-3 transition hover:bg-cream">
-                  <div className="relative aspect-[4/3] w-32 shrink-0 overflow-hidden rounded-2xl sm:w-44">
+                <a href={p.href} target="_blank" rel="noopener noreferrer" className="group flex gap-5 rounded-lg p-3 transition hover:bg-cream">
+                  <div className="relative aspect-[4/3] w-32 shrink-0 overflow-hidden rounded-lg sm:w-44">
                     {p.image && <Image src={p.image} alt="" fill sizes="180px" className="object-cover transition duration-700 group-hover:scale-110" />}
                   </div>
                   <div className="py-1">

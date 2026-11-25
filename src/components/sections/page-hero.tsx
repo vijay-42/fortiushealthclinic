@@ -13,22 +13,20 @@ export function PageHero({
   eyebrow?: string; title: React.ReactNode; text?: React.ReactNode; image?: string; crumbs?: { label: string; href?: string }[]; children?: React.ReactNode;
 }) {
   return (
-    <section className="relative -mt-[5.25rem] overflow-hidden bg-ink pt-36 pb-20 text-white lg:pt-44 lg:pb-28">
+    <section className="relative -mt-[4.5rem] overflow-hidden bg-ink pt-36 pb-20 text-white lg:pt-44 lg:pb-28">
       {image && (
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.35 }} transition={{ duration: 1.6, ease }} className="absolute inset-0">
           <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
         </motion.div>
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-      <div className="pointer-events-none absolute -top-40 -left-20 size-[36rem] rounded-full bg-lime/20 blur-3xl" />
-      <div className="grain absolute inset-0" />
       <div className="container-x relative">
         <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-white/60">
-          <Link href="/" className="hover:text-lime">Home</Link>
+          <Link href="/" className="hover:text-lime-300">Home</Link>
           {crumbs.map((c) => (
             <span key={c.label} className="flex items-center gap-1.5">
               <ChevronRight className="size-3.5" />
-              {c.href ? <Link href={c.href} className="hover:text-lime">{c.label}</Link> : <span className="text-white">{c.label}</span>}
+              {c.href ? <Link href={c.href} className="hover:text-lime-300">{c.label}</Link> : <span className="text-white">{c.label}</span>}
             </span>
           ))}
         </motion.nav>

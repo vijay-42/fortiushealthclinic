@@ -61,16 +61,16 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
 
       <PageHero
         eyebrow={cat.label}
-        title={<>{t.name} <span className="text-lime">Treatment</span> in Bangalore</>}
+        title={<>{t.name} <span className="text-white/50">Treatment</span> in Bangalore</>}
         text={t.tagline}
         image={t.image ?? "/images/gallery/interior-4.jpg"}
         crumbs={[{ label: "Treatments", href: "/treatments" }, { label: t.name }]}
       >
         <div className="flex flex-wrap gap-3">
-          <BookButton concern={t.slug} className="inline-flex h-14 items-center gap-2 rounded-full bg-lime px-7 font-bold text-ink transition hover:bg-white">
+          <BookButton concern={t.slug} className="inline-flex h-14 items-center gap-2 rounded-md bg-lime px-7 font-bold text-white transition hover:bg-lime-700">
             <CalendarCheck className="size-5" /> Book an Appointment
           </BookButton>
-          <a href={whatsappLink(`Hi Fortius, I'd like to consult about ${t.name}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-2 rounded-full border border-white/20 px-7 font-semibold transition hover:border-lime hover:text-lime">
+          <a href={whatsappLink(`Hi Fortius, I'd like to consult about ${t.name}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-2 rounded-md border border-white/20 px-7 font-semibold transition hover:border-lime hover:text-lime-300">
             <MessageCircle className="size-5" /> Ask on WhatsApp
           </a>
         </div>
@@ -89,7 +89,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
           {toc.length > 1 && (
             <div className="no-scrollbar -mx-5 mb-10 flex gap-2 overflow-x-auto px-5 lg:hidden">
               {toc.map((i) => (
-                <a key={i.id} href={`#${i.id}`} className="shrink-0 rounded-full border border-line px-4 py-2 text-sm font-semibold">{i.label}</a>
+                <a key={i.id} href={`#${i.id}`} className="shrink-0 rounded-md border border-line px-4 py-2 text-sm font-semibold">{i.label}</a>
               ))}
             </div>
           )}
@@ -101,7 +101,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
           )}
 
           {t.image && (
-            <Reveal className="relative mb-14 aspect-[16/9] overflow-hidden rounded-[2rem]">
+            <Reveal className="relative mb-14 aspect-[16/9] overflow-hidden rounded-xl">
               <Image src={t.image} alt={t.name} fill sizes="(min-width:1024px) 50vw, 90vw" className="object-cover" />
             </Reveal>
           )}
@@ -111,7 +111,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
               <Reveal key={(s.heading || "s") + i} as="section" className="mb-12 scroll-mt-28" id={s.heading ? sectionId(s.heading) : undefined}>
                 {s.heading && (
                   <h2 className="h-display mb-5 flex items-start gap-4 text-3xl leading-tight text-ink sm:text-[2.1rem]">
-                    <span className="mt-1.5 grid size-9 shrink-0 place-items-center rounded-xl bg-lime-100 font-sans text-sm font-bold text-lime-800">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="mt-1.5 grid size-9 shrink-0 place-items-center rounded-md bg-lime-100 font-sans text-sm font-bold text-lime-800">{String(i + 1).padStart(2, "0")}</span>
                     {s.heading}
                   </h2>
                 )}
@@ -129,13 +129,12 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
           </div>
 
           {/* Inline CTA */}
-          <Reveal className="relative my-14 overflow-hidden rounded-[2rem] bg-ink p-8 text-white sm:p-10">
-            <div className="pointer-events-none absolute -right-16 -bottom-16 size-64 rounded-full bg-lime/25 blur-3xl" />
+          <Reveal className="relative my-14 overflow-hidden rounded-xl bg-ink p-8 text-white sm:p-10">
             <p className="h-display relative text-3xl">Get free counselling from Fortius health clinic experts.</p>
             <p className="relative mt-3 text-white/70">Confidential consultation for {t.name.toLowerCase()} at Richards Town or HSR Layout.</p>
             <div className="relative mt-6 flex flex-wrap gap-3">
-              <BookButton concern={t.slug} className="inline-flex h-12 items-center gap-2 rounded-full bg-lime px-6 font-bold text-ink">Book now <ArrowRight className="size-4" /></BookButton>
-              <a href={`tel:${site.phone.tel}`} className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 px-6 font-semibold"><Phone className="size-4" /> {site.phone.display}</a>
+              <BookButton concern={t.slug} className="inline-flex h-12 items-center gap-2 rounded-md bg-lime px-6 font-bold text-white">Book now <ArrowRight className="size-4" /></BookButton>
+              <a href={`tel:${site.phone.tel}`} className="inline-flex h-12 items-center gap-2 rounded-md border border-white/20 px-6 font-semibold"><Phone className="size-4" /> {site.phone.display}</a>
             </div>
           </Reveal>
 
@@ -150,9 +149,9 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
         {/* Sidebar */}
         <aside>
           <div className="sticky top-28 grid gap-5">
-            <div className="rounded-[2rem] border border-line bg-white p-6">
+            <div className="rounded-xl border border-line bg-white p-6">
               <div className="flex items-center gap-4">
-                <Image src={doctor.image} alt={doctor.name} width={72} height={72} className="size-16 rounded-2xl object-cover" />
+                <Image src={doctor.image} alt={doctor.name} width={72} height={72} className="size-16 rounded-lg object-cover" />
                 <div>
                   <p className="font-bold leading-tight">{doctor.name}</p>
                   <p className="mt-1 flex items-center gap-1 text-xs text-muted"><GraduationCap className="size-3.5" /> {doctor.credentials}</p>
@@ -161,15 +160,15 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
               <p className="mt-4 text-sm leading-relaxed text-muted">{doctor.short}</p>
               <Link href="/about#founder" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-lime-800">About Dr. Jameel <ArrowUpRight className="size-4" /></Link>
             </div>
-            <div className="rounded-[2rem] bg-lime-50 p-6">
+            <div className="rounded-xl bg-lime-50 p-6">
               <p className="flex items-center gap-2 text-sm font-bold text-lime-800"><Lock className="size-4" /> 100% confidential</p>
               <p className="h-display mt-2 text-2xl">Talk to a specialist today</p>
-              <BookButton concern={t.slug} className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-ink font-semibold text-white transition hover:bg-lime hover:text-ink">
+              <BookButton concern={t.slug} className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-ink font-semibold text-white transition hover:bg-lime hover:text-white">
                 <CalendarCheck className="size-4" /> Book appointment
               </BookButton>
-              <a href={`tel:${site.phone.tel}`} className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white font-semibold"><Phone className="size-4" /> Call now</a>
+              <a href={`tel:${site.phone.tel}`} className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-white font-semibold"><Phone className="size-4" /> Call now</a>
             </div>
-            <div className="hidden rounded-[2rem] border border-line p-6 lg:block">
+            <div className="hidden rounded-xl border border-line p-6 lg:block">
               <p className="text-xs font-bold tracking-[0.14em] text-muted uppercase">Quick links</p>
               <ul className="mt-4 grid gap-1">
                 {treatments.filter((r) => r.slug !== t.slug).slice(0, 8).map((r) => (
@@ -188,8 +187,8 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
             <Stagger className="mt-10 grid gap-5 md:grid-cols-3">
               {related.map((r) => (
                 <RevealItem key={r.slug}>
-                  <Link href={`/treatments/${r.slug}`} className="group flex h-full flex-col rounded-[2rem] bg-white p-7 transition hover:-translate-y-1 hover:shadow-lift">
-                    <span className="grid size-12 place-items-center rounded-2xl bg-lime-50 text-lime-800 transition group-hover:bg-lime group-hover:text-ink"><Icon name={r.icon} className="size-5" /></span>
+                  <Link href={`/treatments/${r.slug}`} className="group flex h-full flex-col rounded-xl bg-white p-7 transition hover:-translate-y-1 hover:shadow-lift">
+                    <span className="grid size-12 place-items-center rounded-lg bg-lime-50 text-lime-800 transition group-hover:bg-lime group-hover:text-white"><Icon name={r.icon} className="size-5" /></span>
                     <h3 className="h-display mt-6 text-2xl">{r.name}</h3>
                     <p className="mt-2 line-clamp-3 text-muted">{r.summary}</p>
                     <span className="mt-auto inline-flex items-center gap-2 pt-6 font-bold">Learn more <ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>

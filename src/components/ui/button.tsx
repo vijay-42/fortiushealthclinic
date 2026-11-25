@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "dark" | "ghost" | "light" | "outline";
 
 const styles: Record<Variant, string> = {
-  primary: "bg-lime text-ink shadow-glow hover:bg-lime-600 hover:text-white",
-  dark: "bg-ink text-white hover:bg-ink-soft",
+  primary: "bg-lime text-white hover:bg-lime-700",
+  dark: "bg-ink text-white hover:bg-lime-700",
   ghost: "text-ink hover:bg-ink/5",
   light: "bg-white text-ink shadow-soft hover:bg-lime-50",
   outline: "border border-ink/15 text-ink hover:border-ink/40 hover:bg-white",
@@ -20,7 +20,7 @@ type AsLink = Common & { href: string; external?: boolean; onClick?: never; type
 type AsButton = Common & { href?: undefined; onClick?: () => void; type?: "button" | "submit"; disabled?: boolean };
 
 export function Button(props: AsLink | AsButton) {
-  const { variant = "primary", size = "md", className, children, magnetic = true } = props;
+  const { variant = "primary", size = "md", className, children, magnetic = false } = props;
   const ref = useRef<HTMLSpanElement>(null);
   const reduce = useReducedMotion();
   const x = useSpring(useMotionValue(0), { stiffness: 260, damping: 18 });
@@ -35,7 +35,7 @@ export function Button(props: AsLink | AsButton) {
   const reset = () => { x.set(0); y.set(0); };
 
   const cls = cn(
-    "group relative inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-300 disabled:opacity-60",
+    "group relative inline-flex items-center justify-center gap-2 rounded-md font-semibold whitespace-nowrap transition-colors duration-300 disabled:opacity-60",
     size === "lg" && "h-14 px-7 text-base",
     size === "md" && "h-12 px-6 text-[0.95rem]",
     size === "sm" && "h-10 px-4 text-sm",
@@ -57,7 +57,7 @@ export function Button(props: AsLink | AsButton) {
     );
   }
   return (
-    <button type={props.type ?? "button"} onClick={props.onClick} disabled={props.disabled} className="inline-flex rounded-full">
+    <button type={props.type ?? "button"} onClick={props.onClick} disabled={props.disabled} className="inline-flex rounded-md">
       {content}
     </button>
   );

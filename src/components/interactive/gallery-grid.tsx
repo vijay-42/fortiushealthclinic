@@ -34,8 +34,8 @@ export function GalleryGrid({ images, filters = true }: { images: readonly Img[]
       {filters && (
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           {cats.map((c) => (
-            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={cn("relative rounded-full px-5 py-2.5 text-sm font-semibold transition-colors", cat === c ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}>
-              {cat === c && <motion.span layoutId="gal-pill" className="absolute inset-0 rounded-full bg-ink" />}
+            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={cn("relative rounded-md px-5 py-2.5 text-sm font-semibold transition-colors", cat === c ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}>
+              {cat === c && <motion.span layoutId="gal-pill" className="absolute inset-0 rounded-md bg-ink" />}
               <span className="relative">{c}</span>
             </button>
           ))}
@@ -52,7 +52,7 @@ export function GalleryGrid({ images, filters = true }: { images: readonly Img[]
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.4 }}
               onClick={() => setIdx(i)}
-              className={cn("group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-3xl", img.cat === "Awards" ? "bg-cream" : "bg-mist")}
+              className={cn("group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-lg", img.cat === "Awards" ? "bg-cream" : "bg-mist")}
               aria-label={`Open image: ${img.alt}`}
             >
               <Image src={img.src} alt={img.alt} width={600} height={img.cat === "Awards" ? 430 : i % 3 === 0 ? 760 : 600} sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw" className={cn("h-auto w-full transition duration-700 group-hover:scale-105", img.cat === "Awards" ? "object-contain p-4" : "object-cover")} />
@@ -67,7 +67,7 @@ export function GalleryGrid({ images, filters = true }: { images: readonly Img[]
 
       <AnimatePresence>
         {idx !== null && list[idx] && (
-          <motion.div className="fixed inset-0 z-[95] flex flex-col bg-ink/95 backdrop-blur" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label="Image viewer">
+          <motion.div className="fixed inset-0 z-[95] flex flex-col bg-ink/95" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label="Image viewer">
             <div className="flex items-center justify-between p-5 text-white">
               <span className="text-sm text-white/60">{idx + 1} / {list.length} · {list[idx].alt}</span>
               <button onClick={close} className="grid size-12 place-items-center rounded-full bg-white/10" aria-label="Close"><X /></button>
@@ -78,8 +78,8 @@ export function GalleryGrid({ images, filters = true }: { images: readonly Img[]
                   <Image src={list[idx].src} alt={list[idx].alt} fill sizes="100vw" className="object-contain" />
                 </motion.div>
               </AnimatePresence>
-              <button onClick={(e) => { e.stopPropagation(); move(-1); }} className="absolute top-1/2 left-4 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-lime hover:text-ink" aria-label="Previous"><ChevronLeft /></button>
-              <button onClick={(e) => { e.stopPropagation(); move(1); }} className="absolute top-1/2 right-4 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-lime hover:text-ink" aria-label="Next"><ChevronRight /></button>
+              <button onClick={(e) => { e.stopPropagation(); move(-1); }} className="absolute top-1/2 left-4 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-lime hover:text-white" aria-label="Previous"><ChevronLeft /></button>
+              <button onClick={(e) => { e.stopPropagation(); move(1); }} className="absolute top-1/2 right-4 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white hover:bg-lime hover:text-white" aria-label="Next"><ChevronRight /></button>
             </div>
           </motion.div>
         )}

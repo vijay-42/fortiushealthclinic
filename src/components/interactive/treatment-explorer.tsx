@@ -26,16 +26,16 @@ export function TreatmentExplorer() {
               key={c.id}
               onClick={() => setCat(c.id)}
               aria-pressed={cat === c.id}
-              className={cn("relative shrink-0 rounded-full px-5 py-3 text-sm font-semibold transition-colors", cat === c.id ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}
+              className={cn("relative shrink-0 rounded-md px-5 py-3 text-sm font-semibold transition-colors", cat === c.id ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}
             >
-              {cat === c.id && <motion.span layoutId="tx-pill" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
+              {cat === c.id && <motion.span layoutId="tx-pill" className="absolute inset-0 rounded-md bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
               <span className="relative">{c.label}</span>
             </button>
           ))}
         </div>
         <label className="relative block lg:w-80">
           <Search className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted" />
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom or condition" aria-label="Search treatments" className="h-12 w-full rounded-full border border-line bg-white pr-4 pl-11 outline-none focus:border-lime focus:ring-4 focus:ring-lime/20" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a symptom or condition" aria-label="Search treatments" className="h-12 w-full rounded-md border border-line bg-white pr-4 pl-11 outline-none focus:border-lime focus:ring-4 focus:ring-lime/20" />
         </label>
       </div>
 
@@ -43,14 +43,14 @@ export function TreatmentExplorer() {
         <AnimatePresence mode="popLayout">
           {list.map((t) => (
             <motion.div key={t.slug} layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
-              <Link href={`/treatments/${t.slug}`} className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-line bg-white transition duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-lift">
+              <Link href={`/treatments/${t.slug}`} className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white transition duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-lift">
                 {t.image ? (
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image src={t.image} alt="" fill sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw" className="object-cover transition duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
                   </div>
                 ) : (
-                  <div className="relative grid aspect-[16/9] place-items-center overflow-hidden bg-gradient-to-br from-mist via-lime-50 to-lime-100">
+                  <div className="relative grid aspect-[16/9] place-items-center overflow-hidden bg-cream">
                     <Icon name={t.icon} className="size-16 text-lime-700/30 transition duration-700 group-hover:scale-125 group-hover:rotate-6" strokeWidth={1.2} />
                   </div>
                 )}
