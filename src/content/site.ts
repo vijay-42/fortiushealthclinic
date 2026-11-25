@@ -16,7 +16,7 @@ export const site = {
     "We specialize in treating men’s sexual health with expert care, confidentiality, and data security.",
   h1: "Best Sexologist Hospital in Bangalore",
   footerBlurb:
-    "Pioneering bastion of men’s sexual wellness, Fortius Clinic embodies erudition and opulence. A haven where fertility and sexual vitality intertwine, curated by expert doctors for transformative rejuvenation.",
+    "Our vision is to guide you on your journey to parenthood and support you every step of the way toward building a family. At Fortius Health Clinic, we focus on personalized care, holistic healing, and treatment solutions tailored to your needs. As a trusted sexologist in Bangalore and dedicated sexual health clinic in Bangalore, we aim to provide compassionate guidance and quality sexual health treatment in Bangalore, helping individuals and couples move toward a healthier, happier future. Stay connected with us for the latest updates on sexual health and wellness.",
   emails: ["fortiushealthclinic@gmail.com", "Info@fortiushealthclinic.com"],
   phone: { display: "+91 99008 48660", tel: "+919900848660" },
   whatsapp: "919900848660",
@@ -58,6 +58,7 @@ export const nav = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
+      { label: "Our Doctors", href: "/doctors" },
       { label: "Awards", href: "/awards" },
     ],
   },
@@ -70,7 +71,7 @@ export const nav = [
 
 export const about = {
   homeIntro: [
-    "Fortius Health Clinic for men stands firm as a luminous bastion of comprehensive care, where the intricate tapestry of men’s sexual health and procreative vitality is delicately woven by expert doctors. Within its hallowed chambers, bespoke solutions and refined expertise converge, harmonizing to sculpt the pinnacle of sexual well-being. Embodied in advanced sexual health science and practises, Fortius beckons seekers of unparalleled rejuvenation to embark upon a journey of transformative renewal guided by the deft hands of expert doctors.",
+    "At Fortius Health Clinic, we are committed to enhancing your well-being with personalized treatments that address sexual health concerns and skin conditions. As a trusted sexologist in Bangalore and a dedicated sexual health clinic in Bangalore, our approach focuses on holistic healing, ensuring every patient receives the highest-quality sexual health treatment in Bangalore, along with herbal solutions tailored to their individual needs.",
     "An eminent Sexual Debility Clinic that gives you one-stop solutions for Sex and Skin Disease.",
   ],
   quote:
@@ -94,7 +95,9 @@ export const doctor = {
   credentials: "MD(AM) BUMS, DAF, CHEF, PGDYT",
   role: "Founder & Chief Sexologist",
   image: "/images/team/dr-jameel.png",
-  awardImage: "/images/team/dr-jameel-award.webp",
+  awardImage: "/images/team/dr-jameel-award-clean.jpg",
+  bio:
+    "Dr. M. Jameel (Dr. Mujahid Jammel), holding MD(AM)BUMS, DAF, CHEF, PGDYT, has over 15 years of experience treating male sexual health concerns, including erectile dysfunction, premature ejaculation, male infertility, and other sexual disorders. As an experienced sexologist in Bangalore, he provides personalized care and guidance for patients seeking effective sexual health treatment in Bangalore. His expertise and dedication to patient care have earned national and international recognition. At Fortius Health Clinic, a trusted sexual health clinic in Bangalore, he focuses on patient well-being, compassionate care, and individualized treatment approaches.",
   short:
     "Dr. M. Jameel is one among the most eminent Health Care Service provider in Herbal Space, Bangalore India established in the year of 2009. It carries the legacy of renowned Unani scholar and physician.",
   long:

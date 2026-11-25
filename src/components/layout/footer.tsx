@@ -30,7 +30,7 @@ export function Footer() {
       <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr]">
         <div>
           <span className="inline-block rounded-lg bg-white px-4 py-3">
-            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={150} height={72} className="h-12 w-auto" />
+            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={84} className="h-14 w-auto" />
           </span>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">{site.footerBlurb}</p>
           <div className="mt-6 flex gap-2">
@@ -45,7 +45,7 @@ export function Footer() {
         <div>
           <h3 className="text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Site Map</h3>
           <ul className="mt-5 grid gap-3 text-white/70">
-            {[["Home", "/"], ["About Us", "/about"], ["Treatments", "/treatments"], ["Gallery", "/gallery"], ["Awards", "/awards"], ["Testimonials", "/testimonials"], ["Contact", "/contact"]].map(([l, h]) => (
+            {[["Home", "/"], ["About Us", "/about"], ["Our Doctors", "/doctors"], ["Treatments", "/treatments"], ["Gallery", "/gallery"], ["Awards", "/awards"], ["Testimonials", "/testimonials"], ["Contact", "/contact"]].map(([l, h]) => (
               <li key={h}><Link href={h} className="transition hover:text-lime-300">{l}</Link></li>
             ))}
             <li><a href={site.blogUrl} target="_blank" rel="noopener noreferrer" className="transition hover:text-lime-300">Blog</a></li>

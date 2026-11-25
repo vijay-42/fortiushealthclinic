@@ -3,21 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { treatments } from "@/content/treatments";
 import { Icon } from "@/components/ui/icon";
-import { RevealItem, Stagger } from "@/components/ui/reveal";
+import { Reveal, RevealItem, Stagger } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const featured = ["erectile-dysfunction", "infertility-azoospermia", "couple-problems", "premature-ejaculation", "male-infertility", "low-testosterone"];
 
+const servicesIntro =
+  "At Fortius Health Clinic, we understand the impact of male sexual health concerns on overall well-being. Our experienced team, including a trusted sexologist in Bangalore, provides personalized care for conditions such as erectile dysfunction, premature ejaculation, and male infertility. As a dedicated sexual health clinic in Bangalore, we focus on comprehensive assessments, holistic care, and tailored solutions. Our goal is to provide effective sexual health treatment in Bangalore, helping you restore confidence, improve sexual wellness, and enhance your quality of life through compassionate, patient-focused care.";
+
 export function ServicesGrid() {
   const items = featured.map((s) => treatments.find((t) => t.slug === s)!);
   return (
     <section className="relative bg-cream py-24 lg:py-32">
       <div className="container-x">
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Services" title={<>We’re more than just a helpful <span className="text-muted">service clinic</span></>} />
-          <Button href="/treatments" variant="outline">All 17 treatments <ArrowUpRight className="size-4" /></Button>
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
+          <SectionHeading eyebrow="Services" title={<>Male Sexual Health Services at Fortius Health Clinic – <span className="text-muted">Trusted Sexologist in Bangalore</span></>} titleClassName="lg:text-[2.6rem]! lg:leading-[1.1]!" />
+          <Reveal delay={0.1}>
+            <p className="leading-relaxed text-muted">{servicesIntro}</p>
+            <div className="mt-6"><Button href="/treatments" variant="outline">All 17 treatments <ArrowUpRight className="size-4" /></Button></div>
+          </Reveal>
         </div>
 
         <Stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -158,7 +158,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted">{doctor.short}</p>
-              <Link href="/about#founder" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-lime-800">About Dr. Jameel <ArrowUpRight className="size-4" /></Link>
+              <Link href="/doctors" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-lime-800">About Dr. Jameel <ArrowUpRight className="size-4" /></Link>
             </div>
             <div className="rounded-xl bg-lime-50 p-6">
               <p className="flex items-center gap-2 text-sm font-bold text-lime-800"><Lock className="size-4" /> 100% confidential</p>

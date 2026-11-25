@@ -3,11 +3,13 @@ import Image from "next/image";
 import { doctor, team } from "@/content/site";
 import { Reveal, RevealItem, Stagger } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export function DoctorSpotlight({ showTeam = true }: { showTeam?: boolean }) {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-x">
+        <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-muted">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14 lg:mb-20" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal className="relative">
             <div className="relative aspect-square overflow-hidden rounded-xl bg-mist">
@@ -19,12 +21,11 @@ export function DoctorSpotlight({ showTeam = true }: { showTeam?: boolean }) {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <span className="eyebrow">Best sexologist in India</span>
-            <h2 className="h-display mt-5 text-5xl leading-none sm:text-6xl">{doctor.name}</h2>
+            <span className="eyebrow">About the Doctor</span>
+            <h3 className="h-display mt-5 text-5xl leading-none sm:text-6xl">{doctor.name}</h3>
             <p className="mt-4 inline-flex items-center gap-2 rounded-md bg-mist px-4 py-2 text-sm font-bold text-ink-soft"><GraduationCap className="size-4 text-lime-700" /> {doctor.credentials}</p>
-            <p className="mt-6 text-lg leading-relaxed text-muted">{doctor.short}</p>
-            <p className="mt-4 leading-relaxed text-muted">{doctor.long}</p>
-            <div className="mt-8"><Button href="/about#founder" variant="dark">More about Dr. Jameel <ArrowRight className="size-4" /></Button></div>
+            <p className="mt-6 text-lg leading-relaxed text-muted">{doctor.bio}</p>
+            <div className="mt-8"><Button href="/doctors" variant="dark">More about Dr. Jameel <ArrowRight className="size-4" /></Button></div>
           </Reveal>
         </div>
 

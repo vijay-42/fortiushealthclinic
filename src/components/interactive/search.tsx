@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 type Item = { kind: "Treatment" | "Page" | "FAQ"; title: string; sub?: string; href: string; haystack: string };
 
 const pages: [string, string][] = [
-  ["Home", "/"], ["About Us", "/about"], ["All Treatments", "/treatments"], ["Awards & Certificates", "/awards"],
+  ["Home", "/"], ["About Us", "/about"], ["Dr. Mujahid Jameel — Our Doctors", "/doctors"], ["All Treatments", "/treatments"], ["Awards & Certificates", "/awards"],
   ["Gallery", "/gallery"], ["Testimonials", "/testimonials"], ["Contact & Directions", "/contact"],
 ];
 

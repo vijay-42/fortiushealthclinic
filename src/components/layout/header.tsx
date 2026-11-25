@@ -64,7 +64,7 @@ export function Header() {
         <div className={cn("border-b transition-colors duration-300", scrolled || menu || pathname !== "/" ? "border-line bg-white" : "border-transparent bg-transparent")}>
         <div className="container-x flex h-[4.5rem] items-center gap-4">
           <Link href="/" className="relative shrink-0" aria-label="Fortius Health Clinic — home">
-            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={132} height={63} priority className="h-11 w-auto" />
+            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={84} priority className="h-14 w-auto" />
           </Link>
 
           <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Main">
@@ -74,7 +74,7 @@ export function Header() {
               return (
                 <div key={item.label} className="relative" onMouseEnter={() => setMenu(hasMenu ? item.label : null)}>
                   {external ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 rounded-md px-4 py-2.5 text-[0.95rem] font-semibold text-ink/80 transition hover:text-ink">
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 rounded-md px-3 py-2.5 text-[0.95rem] xl:px-4 font-semibold text-ink/80 transition hover:text-ink">
                       {item.label} <ArrowUpRight className="size-3.5 opacity-50" />
                     </a>
                   ) : (
@@ -82,11 +82,11 @@ export function Header() {
                       href={item.href}
                       aria-expanded={hasMenu ? menu === item.label : undefined}
                       onFocus={() => setMenu(hasMenu ? item.label : null)}
-                      className={cn("relative flex items-center gap-1 rounded-md px-4 py-2.5 text-[0.95rem] font-semibold transition", isActive(item.href) ? "text-ink" : "text-ink/70 hover:text-ink")}
+                      className={cn("relative flex items-center gap-1 rounded-md px-3 py-2.5 text-[0.95rem] xl:px-4 font-semibold transition", isActive(item.href) ? "text-ink" : "text-ink/70 hover:text-ink")}
                     >
                       {item.label}
                       {hasMenu && <ChevronDown className={cn("size-4 transition-transform", menu === item.label && "rotate-180")} />}
-                      {isActive(item.href) && <motion.span layoutId="nav-dot" className="absolute inset-x-4 -bottom-[0.9rem] h-0.5 bg-lime" />}
+                      {isActive(item.href) && <motion.span layoutId="nav-dot" className="absolute inset-x-3 -bottom-[0.9rem] xl:inset-x-4 h-0.5 bg-lime" />}
                     </Link>
                   )}
                   <AnimatePresence>
@@ -111,8 +111,8 @@ export function Header() {
               <span className="hidden xl:inline">Search</span>
               <kbd className="hidden rounded-md bg-mist px-1.5 py-0.5 text-[0.7rem] font-semibold xl:inline">⌘K</kbd>
             </button>
-            <button onClick={() => booking.open()} className="hidden h-11 items-center gap-2 rounded-md bg-ink px-5 text-sm font-semibold text-white transition hover:bg-lime hover:text-white sm:flex">
-              <CalendarCheck className="size-4" /> Book an Appointment
+            <button onClick={() => booking.open()} className="hidden h-11 items-center gap-2 rounded-md bg-ink px-5 text-sm font-semibold whitespace-nowrap text-white transition hover:bg-lime hover:text-white sm:flex">
+              <CalendarCheck className="size-4" /> <span>Book<span className="lg:max-xl:hidden"> an Appointment</span></span>
             </button>
             <button onClick={() => setMobile(true)} className="grid size-11 place-items-center rounded-full bg-ink text-white lg:hidden" aria-label="Open menu">
               <Menu className="size-5" />
@@ -174,13 +174,13 @@ export function Header() {
             data-lenis-prevent
           >
             <div className="flex h-20 items-center justify-between px-5">
-              <span className="rounded-lg bg-white px-3 py-2"><Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={110} height={52} className="h-9 w-auto" /></span>
+              <span className="rounded-lg bg-white px-3 py-2"><Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={132} height={63} className="h-11 w-auto" /></span>
               <button onClick={() => setMobile(false)} className="grid size-11 place-items-center rounded-full bg-white/10" aria-label="Close menu"><X className="size-5" /></button>
             </div>
             <div className="flex-1 overflow-y-auto px-5 pb-10">
               <nav className="grid gap-1" aria-label="Mobile">
                 {[
-                  { label: "Home", href: "/" }, { label: "About Us", href: "/about" }, { label: "Treatments", href: "/treatments" },
+                  { label: "Home", href: "/" }, { label: "About Us", href: "/about" }, { label: "Our Doctors", href: "/doctors" }, { label: "Treatments", href: "/treatments" },
                   { label: "Awards", href: "/awards" }, { label: "Gallery", href: "/gallery" }, { label: "Testimonials", href: "/testimonials" },
                   { label: "Contact", href: "/contact" },
                 ].map((l, i) => (
