@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export function AboutIntro() {
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative pt-12 pb-24 lg:pt-16 lg:pb-28">
       <div className="container-x grid items-center gap-16 lg:grid-cols-2">
         <Reveal className="relative">
           <div className="grid grid-cols-5 grid-rows-6 gap-4" style={{ height: "min(38rem, 120vw)" }}>

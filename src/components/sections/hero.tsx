@@ -66,7 +66,7 @@ export function Hero() {
           className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-xl bg-ink shadow-lift lg:aspect-[5/4] lg:max-w-none"
         >
           <motion.div style={{ y: yImg, scale: 1.08 }} className="absolute inset-0">
-            <Image src="/images/gallery/interior-2.jpg" alt="Fortius Health Clinic patient lounge, Bangalore" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover" />
+            <Image src="/images/hero/reception.jpg" alt="Fortius Health Clinic reception, Bangalore" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover object-[center_70%]" />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/60" />
 
