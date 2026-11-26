@@ -60,11 +60,11 @@ export const nav = [
       { label: "About Us", href: "/about" },
       { label: "Our Doctors", href: "/doctors" },
       { label: "Awards", href: "/awards" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Testimonials", href: "/testimonials" },
     ],
   },
   { label: "Treatments", href: "/treatments", mega: true },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Testimonials", href: "/testimonials" },
   { label: "Blog", href: site.blogUrl, external: true },
   { label: "Contact", href: "/contact" },
 ] as const;

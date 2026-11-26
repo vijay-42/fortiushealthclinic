@@ -41,6 +41,7 @@ export function Header() {
   }, [mobile]);
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  const isItemActive = (item: (typeof nav)[number]) => isActive(item.href) || ("children" in item && item.children.some((c) => isActive(c.href)));
 
   return (
     <>
@@ -82,11 +83,11 @@ export function Header() {
                       href={item.href}
                       aria-expanded={hasMenu ? menu === item.label : undefined}
                       onFocus={() => setMenu(hasMenu ? item.label : null)}
-                      className={cn("relative flex items-center gap-1 rounded-md px-3 py-2.5 text-[0.95rem] xl:px-4 font-semibold transition", isActive(item.href) ? "text-ink" : "text-ink/70 hover:text-ink")}
+                      className={cn("relative flex items-center gap-1 rounded-md px-3 py-2.5 text-[0.95rem] xl:px-4 font-semibold transition", isItemActive(item) ? "text-ink" : "text-ink/70 hover:text-ink")}
                     >
                       {item.label}
                       {hasMenu && <ChevronDown className={cn("size-4 transition-transform", menu === item.label && "rotate-180")} />}
-                      {isActive(item.href) && <motion.span layoutId="nav-dot" className="absolute inset-x-3 -bottom-[0.9rem] xl:inset-x-4 h-0.5 bg-lime" />}
+                      {isItemActive(item) && <motion.span layoutId="nav-dot" className="absolute inset-x-3 -bottom-[0.9rem] xl:inset-x-4 h-0.5 bg-lime" />}
                     </Link>
                   )}
                   <AnimatePresence>
