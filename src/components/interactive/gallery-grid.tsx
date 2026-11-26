@@ -35,7 +35,7 @@ export function GalleryGrid({ images, filters = true }: { images: readonly Img[]
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           {cats.map((c) => (
             <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={cn("relative rounded-md px-5 py-2.5 text-sm font-semibold transition-colors", cat === c ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}>
-              {cat === c && <motion.span layoutId="gal-pill" className="absolute inset-0 rounded-md bg-ink" />}
+              {cat === c && <motion.span layoutId="gal-pill" className="absolute inset-0 rounded-md bg-lime-700" />}
               <span className="relative">{c}</span>
             </button>
           ))}

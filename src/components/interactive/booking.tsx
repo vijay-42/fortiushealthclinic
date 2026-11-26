@@ -130,7 +130,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
             <ol className="mb-8 flex items-center gap-2">
               {steps.map((s, i) => (
                 <li key={s} className="flex flex-1 items-center gap-2">
-                  <span className={cn("grid size-8 shrink-0 place-items-center rounded-full text-sm font-bold transition-colors", i < step ? "bg-lime text-white" : i === step ? "bg-ink text-white" : "bg-white text-muted")}>
+                  <span className={cn("grid size-8 shrink-0 place-items-center rounded-full text-sm font-bold transition-colors", i < step ? "bg-lime text-white" : i === step ? "bg-lime-700 text-white" : "bg-white text-muted")}>
                     {i < step ? <Check className="size-4" strokeWidth={3} /> : i + 1}
                   </span>
                   <span className={cn("text-sm font-semibold", i === step ? "text-ink" : "text-muted")}>{s}</span>
@@ -150,7 +150,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                         key={c.id}
                         type="button"
                         onClick={() => { setConcern(c.id); setStep(1); }}
-                        className={cn("rounded-md border px-4 py-2.5 text-sm font-semibold transition", concern === c.id ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-lime hover:bg-lime-50")}
+                        className={cn("rounded-md border px-4 py-2.5 text-sm font-semibold transition", concern === c.id ? "border-lime-700 bg-lime-700 text-white" : "border-line bg-white hover:border-lime hover:bg-lime-50")}
                       >
                         {c.label}
                       </button>
@@ -181,7 +181,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                   </div>
                   <div className="mt-8 flex justify-between">
                     <button type="button" onClick={() => setStep(0)} className="inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
-                    <button type="button" onClick={() => setStep(2)} className="inline-flex h-12 items-center gap-2 rounded-md bg-ink px-6 font-semibold text-white">Continue <ArrowRight className="size-4" /></button>
+                    <button type="button" onClick={() => setStep(2)} className="inline-flex h-12 items-center gap-2 rounded-md bg-lime-700 px-6 font-semibold text-white">Continue <ArrowRight className="size-4" /></button>
                   </div>
                 </motion.div>
               )}

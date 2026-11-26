@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export const viewport: Viewport = { themeColor: "#0d1f17" };
+export const viewport: Viewport = { themeColor: "#fbeedd" };
 
 const clinicSchema = {
   "@context": "https://schema.org",

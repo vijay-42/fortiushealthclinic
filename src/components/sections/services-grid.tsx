@@ -33,19 +33,19 @@ export function ServicesGrid() {
                 href={`/treatments/${t.slug}`}
                 className={cn(
                   "group relative flex h-full flex-col overflow-hidden rounded-xl p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift sm:p-8",
-                  i === 0 ? "bg-ink text-white" : "bg-white",
+                  i === 0 ? "bg-block text-ink" : "bg-white",
                 )}
               >
                 <div className="flex items-start justify-between">
                   <span className={cn("grid size-14 place-items-center rounded-lg transition-all duration-500 group-hover:rotate-[-8deg] group-hover:scale-110", i === 0 ? "bg-lime text-white" : "bg-lime-50 text-lime-800 group-hover:bg-lime group-hover:text-white")}>
                     <Icon name={t.icon} className="size-6" />
                   </span>
-                  <span className={cn("grid size-11 place-items-center rounded-full border transition-all duration-500 group-hover:rotate-45", i === 0 ? "border-white/20 group-hover:bg-lime group-hover:text-white" : "border-line group-hover:border-ink group-hover:bg-ink group-hover:text-white")}>
+                  <span className={cn("grid size-11 place-items-center rounded-full border transition-all duration-500 group-hover:rotate-45", i === 0 ? "border-ink/20 group-hover:bg-lime group-hover:text-white" : "border-line group-hover:border-lime-700 group-hover:bg-lime-700 group-hover:text-ink")}>
                     <ArrowUpRight className="size-4" />
                   </span>
                 </div>
                 <h3 className={cn("h-display mt-8 text-2xl sm:text-[1.7rem]", i === 0 && "sm:text-4xl")}>{t.name}</h3>
-                <p className={cn("mt-3 leading-relaxed", i === 0 ? "text-white/70" : "text-muted", i !== 0 && "line-clamp-4")}>{t.summary}</p>
+                <p className={cn("mt-3 leading-relaxed", i === 0 ? "text-ink-soft" : "text-muted", i !== 0 && "line-clamp-4")}>{t.summary}</p>
                 {i === 0 && (
                   <div className="mt-auto pt-10">
                     <div className="relative aspect-[4/3] overflow-hidden rounded-lg">

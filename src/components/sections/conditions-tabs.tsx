@@ -26,7 +26,7 @@ export function ConditionsTabs() {
               onClick={() => setActive(i)}
               className={cn("relative shrink-0 rounded-md px-5 py-3 text-sm font-semibold transition-colors sm:px-6", active === i ? "text-white" : "text-ink/70 hover:text-ink")}
             >
-              {active === i && <motion.span layoutId="cond-pill" className="absolute inset-0 rounded-md bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
+              {active === i && <motion.span layoutId="cond-pill" className="absolute inset-0 rounded-md bg-lime-700" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
               <span className="relative">{c.title}</span>
             </button>
           ))}

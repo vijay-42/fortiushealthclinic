@@ -80,7 +80,7 @@ export default function DoctorsPage() {
                 <p className="text-sm text-muted">{doctor.role}</p>
                 <p className="mt-3 flex items-start gap-2 text-sm"><GraduationCap className="mt-0.5 size-4 shrink-0 text-lime-700" /> {doctor.credentials}</p>
                 <div className="mt-5 grid gap-2">
-                  <BookButton className="flex h-11 items-center justify-center gap-2 rounded-md bg-ink text-sm font-semibold text-white transition hover:bg-lime-700">
+                  <BookButton className="flex h-11 items-center justify-center gap-2 rounded-md bg-lime-700 text-sm font-semibold text-white transition hover:bg-lime-800">
                     <CalendarCheck className="size-4" /> Book appointment
                   </BookButton>
                   <a href={`tel:${site.phone.tel}`} className="flex h-11 items-center justify-center gap-2 rounded-md border border-line text-sm font-semibold transition hover:border-ink">
@@ -204,7 +204,7 @@ export default function DoctorsPage() {
           <Reveal>
             <span className="eyebrow">FAQs</span>
             <h2 className="h-display mt-5 text-3xl sm:text-4xl">Questions about consulting a sexologist</h2>
-            <BookButton className="mt-8 inline-flex h-12 items-center gap-2 rounded-md bg-ink px-6 font-semibold text-white transition hover:bg-lime-700">
+            <BookButton className="mt-8 inline-flex h-12 items-center gap-2 rounded-md bg-lime-700 px-6 font-semibold text-white transition hover:bg-lime-800">
               <CalendarCheck className="size-4" /> Book a confidential consultation
             </BookButton>
           </Reveal>

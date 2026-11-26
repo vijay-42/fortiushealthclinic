@@ -18,15 +18,15 @@ export function FaqEnquiry({ faqs }: { faqs: Faq[] }) {
           <Reveal delay={0.1} className="mt-10"><FaqList faqs={faqs} /></Reveal>
         </div>
         <Reveal delay={0.15} id="enquiry">
-          <div className="relative overflow-hidden rounded-xl bg-ink p-7 sm:p-10">
+          <div className="relative overflow-hidden rounded-xl bg-block p-7 sm:p-10">
             <div className="relative flex items-center gap-4">
               <Image src="/images/team/reception-team.png" alt="" width={80} height={80} className="size-16 rounded-lg object-cover" />
               <div>
-                <p className="text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Enquiry form</p>
-                <h2 className="h-display mt-1 text-3xl text-white sm:text-4xl">Ready to get started with Fortius</h2>
+                <p className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Enquiry form</p>
+                <h2 className="h-display mt-1 text-3xl text-ink sm:text-4xl">Ready to get started with Fortius</h2>
               </div>
             </div>
-            <div className="relative mt-8"><EnquiryForm dark source="home-enquiry" /></div>
+            <div className="relative mt-8"><EnquiryForm source="home-enquiry" /></div>
           </div>
         </Reveal>
       </div>

@@ -18,16 +18,16 @@ export function MobileDock() {
           <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="grid size-12 shrink-0 place-items-center rounded-full bg-[#25D366] text-white" aria-label="Chat on WhatsApp">
             <SocialIcon name="WhatsApp" className="size-5" />
           </a>
-          <button onClick={() => open()} className="flex h-12 flex-1 items-center justify-center gap-2 rounded-md bg-ink font-semibold text-white">
+          <button onClick={() => open()} className="flex h-12 flex-1 items-center justify-center gap-2 rounded-md bg-lime-700 font-semibold text-white">
             <CalendarCheck className="size-4" /> Book Appointment
           </button>
         </div>
       </div>
 
       <div className="fixed right-6 bottom-6 z-40 hidden flex-col gap-3 lg:flex">
-        <a href={`tel:${site.phone.tel}`} aria-label="Call the clinic" className="group relative grid size-14 place-items-center rounded-full bg-ink text-white shadow-lift transition hover:scale-110">
+        <a href={`tel:${site.phone.tel}`} aria-label="Call the clinic" className="group relative grid size-14 place-items-center rounded-full bg-lime-700 text-white shadow-lift transition hover:scale-110">
           <Phone className="size-5" />
-          <span className="pointer-events-none absolute right-full mr-3 rounded-md bg-ink px-3 py-1.5 text-sm font-semibold whitespace-nowrap opacity-0 transition group-hover:opacity-100">{site.phone.display}</span>
+          <span className="pointer-events-none absolute right-full mr-3 rounded-md bg-lime-700 px-3 py-1.5 text-sm font-semibold whitespace-nowrap opacity-0 transition group-hover:opacity-100">{site.phone.display}</span>
         </a>
         <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="relative grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lift transition hover:scale-110">
           <SocialIcon name="WhatsApp" className="relative size-6" />

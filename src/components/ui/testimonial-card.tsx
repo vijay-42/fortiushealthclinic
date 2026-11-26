@@ -8,7 +8,7 @@ export function TestimonialCard({ t, className, dark }: { t: Testimonial; classN
       <Quote className={cn("size-8", dark ? "text-lime-300" : "text-lime-600")} />
       <blockquote className={cn("mt-4 flex-1 leading-relaxed", dark ? "text-white/80" : "text-ink-soft")}>“{t.quote}”</blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
-        <span className={cn("grid size-11 place-items-center rounded-full text-sm font-bold", dark ? "bg-lime text-white" : "bg-ink text-lime-300")}>{initials(t.name)}</span>
+        <span className={cn("grid size-11 place-items-center rounded-full text-sm font-bold", dark ? "bg-lime text-white" : "bg-lime-50 text-lime-800")}>{initials(t.name)}</span>
         <span className="flex-1">
           <span className="block font-bold">{t.name}</span>
           {t.place && <span className={cn("text-sm", dark ? "text-white/50" : "text-muted")}>{t.place}</span>}

@@ -20,19 +20,19 @@ export function AboutIntro() {
             <div className="relative col-span-2 row-span-3 overflow-hidden rounded-xl">
               <Image src={doctor.awardImage} alt="Dr. Mujahid Jameel receiving the Pride of Nation award" fill sizes="(min-width:1024px) 20vw, 40vw" className="object-cover object-top" />
             </div>
-            <div className="col-span-3 row-span-2 hidden flex-col justify-center rounded-xl bg-ink p-6 text-white sm:flex">
-              <Quote className="size-6 text-lime-300" />
-              <p className="mt-2 text-[0.95rem] leading-relaxed text-white/80">{about.quote}</p>
-              <p className="h-display mt-2 text-lg text-lime-300">{doctor.name}</p>
+            <div className="col-span-3 row-span-2 hidden flex-col justify-center rounded-xl bg-block p-6 text-ink sm:flex">
+              <Quote className="size-6 text-lime-700" />
+              <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{about.quote}</p>
+              <p className="h-display mt-2 text-lg text-lime-700">{doctor.name}</p>
             </div>
             <div className="relative col-span-3 row-span-2 overflow-hidden rounded-xl sm:hidden">
               <Image src="/images/gallery/interior-3.jpg" alt="" fill sizes="60vw" className="object-cover" />
             </div>
           </div>
-          <div className="mt-4 rounded-xl bg-ink p-6 text-white sm:hidden">
-            <Quote className="size-6 text-lime-300" />
-            <p className="mt-2 text-sm leading-relaxed text-white/80">{about.quote}</p>
-            <p className="h-display mt-2 text-lg text-lime-300">{doctor.name}</p>
+          <div className="mt-4 rounded-xl bg-block p-6 text-ink sm:hidden">
+            <Quote className="size-6 text-lime-700" />
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{about.quote}</p>
+            <p className="h-display mt-2 text-lg text-lime-700">{doctor.name}</p>
           </div>
         </Reveal>
 

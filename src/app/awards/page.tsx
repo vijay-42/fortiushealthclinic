@@ -16,9 +16,9 @@ export default function AwardsPage() {
         <div className="container-x">
           <div className="grid gap-5 md:grid-cols-2">
             {[["Most Trusted Sexologist of the Year", "IBARC Asia International"], ["Best Sexologist", "Asia Today"]].map(([t, by], i) => (
-              <Reveal key={t} delay={i * 0.1} className="flex items-center gap-5 rounded-xl bg-ink p-7 text-white">
+              <Reveal key={t} delay={i * 0.1} className="flex items-center gap-5 rounded-xl bg-block p-7 text-ink">
                 <span className="grid size-16 shrink-0 place-items-center rounded-lg bg-lime text-white"><Award className="size-7" /></span>
-                <div><p className="h-display text-2xl">“{t}”</p><p className="mt-1 text-white/60">{by}</p></div>
+                <div><p className="h-display text-2xl">“{t}”</p><p className="mt-1 text-muted">{by}</p></div>
               </Reveal>
             ))}
           </div>

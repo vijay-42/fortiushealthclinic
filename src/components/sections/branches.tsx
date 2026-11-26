@@ -30,7 +30,7 @@ export function Branches({ heading = true }: { heading?: boolean }) {
                 <p className="h-display mt-2 text-2xl">{br.name}</p>
                 <p className="mt-3 flex gap-2 text-muted"><MapPin className="mt-1 size-4 shrink-0" /> {br.address}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <a href={`tel:${br.phone.tel}`} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-semibold text-white"><Phone className="size-3.5" /> {br.phone.display}</a>
+                  <a href={`tel:${br.phone.tel}`} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 rounded-md bg-lime-700 px-4 py-2 text-sm font-semibold text-white"><Phone className="size-3.5" /> {br.phone.display}</a>
                   <a href={br.directions} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 rounded-md bg-mist px-4 py-2 text-sm font-semibold"><Navigation className="size-3.5" /> Directions</a>
                 </div>
               </button>

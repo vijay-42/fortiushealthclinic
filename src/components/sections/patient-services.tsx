@@ -22,7 +22,7 @@ export function PatientServices() {
                 {patientServices.items.map((it, i) => (
                   <RevealItem key={it.title} className={i === 4 ? "sm:col-span-2" : ""}>
                     <div className="group flex h-full items-center gap-4 rounded-lg bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:shadow-lift">
-                      <span className="grid size-14 shrink-0 place-items-center rounded-lg bg-ink text-lime-300 transition duration-500 group-hover:rotate-[-8deg] group-hover:bg-lime group-hover:text-white">
+                      <span className="grid size-14 shrink-0 place-items-center rounded-lg bg-lime-50 text-lime-800 transition duration-500 group-hover:rotate-[-8deg] group-hover:bg-lime group-hover:text-white">
                         <Icon name={it.icon} className="size-6" />
                       </span>
                       <span className="text-lg font-bold leading-snug">{it.title}</span>

@@ -44,7 +44,7 @@ export default function AboutPage() {
           <Stagger className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {stats.map((s, i) => (
               <RevealItem key={s.label}>
-                <div className={i % 2 ? "rounded-xl border border-line bg-cream p-8" : "rounded-xl bg-ink p-8 text-white"}>
+                <div className={i % 2 ? "rounded-xl border border-line bg-cream p-8" : "rounded-xl bg-block p-8 text-ink"}>
                   <p className="h-display text-5xl sm:text-6xl"><Counter value={s.value} suffix={s.suffix} decimals={s.decimals} /></p>
                   <p className={i % 2 ? "mt-2 font-semibold text-muted" : "mt-2 font-semibold text-white/60"}>{s.label}</p>
                 </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <p className="mt-4 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-bold"><GraduationCap className="size-4 text-lime-700" /> {doctor.credentials}</p>
             <p className="mt-6 text-lg leading-relaxed text-muted">{doctor.long}</p>
             <p className="mt-6 flex items-center gap-2 font-semibold"><Globe2 className="size-5 text-lime-700" /> Serving patients across India &amp; the Middle East</p>
-            <BookButton className="mt-8 inline-flex h-14 items-center gap-2 rounded-md bg-ink px-7 font-semibold text-white transition hover:bg-lime hover:text-white">
+            <BookButton className="mt-8 inline-flex h-14 items-center gap-2 rounded-md bg-lime-700 px-7 font-semibold text-white transition hover:bg-lime hover:text-white">
               <CalendarCheck className="size-5" /> Book an Appointment
             </BookButton>
           </Reveal>

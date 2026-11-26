@@ -7,16 +7,17 @@
   --color-line: #e2e0d9;
   --color-cream: #f4f2ed;
   --color-mist: #eae8e2;
-  --color-lime-50: #eef3e8;
-  --color-lime-100: #dde8cf;
-  --color-lime-200: #bcd3a2;
-  --color-lime-300: #a9c98b;
-  --color-lime: #4d8a2a;
-  --color-lime-600: #427824;
-  --color-lime-700: #3a6a20;
-  --color-lime-800: #2d5218;
-  --color-orange: #d97a1e;
-  --color-orange-600: #b8640f;
+  --color-block: #fbeedd;
+  --color-lime-50: #f4f8e6;
+  --color-lime-100: #e8f0cb;
+  --color-lime-200: #d6e4a0;
+  --color-lime-300: #c3d873;
+  --color-lime: #7a9324;
+  --color-lime-600: #6f8720;
+  --color-lime-700: #5a6e19;
+  --color-lime-800: #435312;
+  --color-orange: #e3922a;
+  --color-orange-600: #a8620e;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
@@ -70,7 +71,7 @@
   .prose-fortius li::before {
     content: "";
     @apply absolute top-[0.45em] left-0 size-[1.05rem] rounded-sm bg-lime-100;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235e9a1f' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a6e19' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
     background-size: 62%;
     background-position: center;
     background-repeat: no-repeat;

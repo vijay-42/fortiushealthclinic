@@ -144,11 +144,11 @@ export default function SexologistInBangalorePage() {
           </Reveal>
 
           <Reveal delay={0.1} id="enquiry">
-            <div className="rounded-xl bg-ink p-6 shadow-lift sm:p-8">
-              <p className="text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Free callback</p>
-              <h2 className="h-display mt-1 text-2xl text-white sm:text-3xl">Why thousands of patients trust us</h2>
-              <p className="mt-2 flex items-center gap-2 text-sm text-white/60"><Lock className="size-3.5" /> Your details stay 100% confidential.</p>
-              <div className="mt-6"><EnquiryForm dark source="lp-sexologist-in-bangalore" /></div>
+            <div className="rounded-xl bg-block p-6 shadow-lift sm:p-8">
+              <p className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Free callback</p>
+              <h2 className="h-display mt-1 text-2xl text-ink sm:text-3xl">Why thousands of patients trust us</h2>
+              <p className="mt-2 flex items-center gap-2 text-sm text-muted"><Lock className="size-3.5" /> Your details stay 100% confidential.</p>
+              <div className="mt-6"><EnquiryForm source="lp-sexologist-in-bangalore" /></div>
             </div>
           </Reveal>
         </div>
@@ -196,12 +196,12 @@ export default function SexologistInBangalorePage() {
       </section>
 
       {/* Shockwave therapy */}
-      <section className="bg-ink py-20 text-white lg:py-28">
+      <section className="bg-block py-20 text-ink lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_0.8fr_1fr] lg:items-center">
           <Reveal>
-            <span className="eyebrow-dark">What is Li-ESWT?</span>
-            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Shockwave Therapy for <span className="text-lime-300">Erectile Dysfunction</span></h2>
-            <p className="mt-6 leading-relaxed text-white/70">Low-intensity shockwave therapy (Li-ESWT) is a non-surgical treatment option for erectile dysfunction caused by reduced blood flow. It uses gentle acoustic waves to support healthy blood circulation in the treated area. The procedure is non-invasive and does not require medication or downtime. Our doctors will assess whether this therapy is suitable for you during your consultation.</p>
+            <span className="eyebrow">What is Li-ESWT?</span>
+            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Shockwave Therapy for <span className="text-lime-700">Erectile Dysfunction</span></h2>
+            <p className="mt-6 leading-relaxed text-ink-soft">Low-intensity shockwave therapy (Li-ESWT) is a non-surgical treatment option for erectile dysfunction caused by reduced blood flow. It uses gentle acoustic waves to support healthy blood circulation in the treated area. The procedure is non-invasive and does not require medication or downtime. Our doctors will assess whether this therapy is suitable for you during your consultation.</p>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto w-full max-w-xs rounded-xl bg-white p-6">
             <div className="relative aspect-[275/392]">
@@ -217,7 +217,7 @@ export default function SexologistInBangalorePage() {
                 <h3 className="text-lg font-semibold">{g.title}</h3>
                 <ul className="mt-3 grid gap-2">
                   {g.items.map((it) => (
-                    <li key={it} className="flex items-start gap-3 text-sm text-white/75"><Check className="mt-0.5 size-4 shrink-0 text-lime-300" /> {it}</li>
+                    <li key={it} className="flex items-start gap-3 text-sm text-ink-soft"><Check className="mt-0.5 size-4 shrink-0 text-lime-700" /> {it}</li>
                   ))}
                 </ul>
               </div>
@@ -318,7 +318,7 @@ export default function SexologistInBangalorePage() {
               <p className="mt-4 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-bold text-ink-soft"><Stethoscope className="size-4 text-lime-700" /> {doctor.credentials}</p>
               <p className="mt-6 leading-relaxed text-muted">{doctor.bio}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BookButton className="inline-flex h-12 items-center gap-2 rounded-md bg-ink px-6 font-semibold text-white transition hover:bg-lime-700"><CalendarCheck className="size-4" /> Book with Dr. Jameel</BookButton>
+                <BookButton className="inline-flex h-12 items-center gap-2 rounded-md bg-lime-700 px-6 font-semibold text-white transition hover:bg-lime-800"><CalendarCheck className="size-4" /> Book with Dr. Jameel</BookButton>
                 <Link href="/doctors" className="inline-flex h-12 items-center gap-2 rounded-md border border-ink/15 px-6 font-semibold transition hover:border-ink/40 hover:bg-white">Full profile <ArrowRight className="size-4" /></Link>
               </div>
             </Reveal>
@@ -396,10 +396,10 @@ export default function SexologistInBangalorePage() {
             </ul>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="rounded-xl bg-ink p-7 sm:p-10">
-              <p className="text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Enquiry form</p>
-              <h2 className="h-display mt-1 text-3xl text-white sm:text-4xl">Book an Appointment with us</h2>
-              <div className="mt-8"><EnquiryForm dark source="lp-sexologist-in-bangalore-contact" /></div>
+            <div className="rounded-xl bg-block p-7 sm:p-10">
+              <p className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Enquiry form</p>
+              <h2 className="h-display mt-1 text-3xl text-ink sm:text-4xl">Book an Appointment with us</h2>
+              <div className="mt-8"><EnquiryForm source="lp-sexologist-in-bangalore-contact" /></div>
             </div>
           </Reveal>
         </div>

@@ -129,12 +129,12 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
           </div>
 
           {/* Inline CTA */}
-          <Reveal className="relative my-14 overflow-hidden rounded-xl bg-ink p-8 text-white sm:p-10">
+          <Reveal className="relative my-14 overflow-hidden rounded-xl bg-block p-8 text-ink sm:p-10">
             <p className="h-display relative text-3xl">Get free counselling from Fortius health clinic experts.</p>
-            <p className="relative mt-3 text-white/70">Confidential consultation for {t.name.toLowerCase()} at Richards Town or HSR Layout.</p>
+            <p className="relative mt-3 text-ink-soft">Confidential consultation for {t.name.toLowerCase()} at Richards Town or HSR Layout.</p>
             <div className="relative mt-6 flex flex-wrap gap-3">
               <BookButton concern={t.slug} className="inline-flex h-12 items-center gap-2 rounded-md bg-lime px-6 font-bold text-white">Book now <ArrowRight className="size-4" /></BookButton>
-              <a href={`tel:${site.phone.tel}`} className="inline-flex h-12 items-center gap-2 rounded-md border border-white/20 px-6 font-semibold"><Phone className="size-4" /> {site.phone.display}</a>
+              <a href={`tel:${site.phone.tel}`} className="inline-flex h-12 items-center gap-2 rounded-md border border-ink/20 px-6 font-semibold"><Phone className="size-4" /> {site.phone.display}</a>
             </div>
           </Reveal>
 
@@ -163,7 +163,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
             <div className="rounded-xl bg-lime-50 p-6">
               <p className="flex items-center gap-2 text-sm font-bold text-lime-800"><Lock className="size-4" /> 100% confidential</p>
               <p className="h-display mt-2 text-2xl">Talk to a specialist today</p>
-              <BookButton concern={t.slug} className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-ink font-semibold text-white transition hover:bg-lime hover:text-white">
+              <BookButton concern={t.slug} className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-lime-700 font-semibold text-white transition hover:bg-lime hover:text-white">
                 <CalendarCheck className="size-4" /> Book appointment
               </BookButton>
               <a href={`tel:${site.phone.tel}`} className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-white font-semibold"><Phone className="size-4" /> Call now</a>

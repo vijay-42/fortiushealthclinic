@@ -46,7 +46,7 @@ export function Header() {
   return (
     <>
       {/* Top info bar */}
-      <div className="hidden bg-ink text-[0.8rem] text-white/70 lg:block">
+      <div className="hidden bg-block text-[0.8rem] text-ink-soft lg:block">
         <div className="container-x flex h-10 items-center justify-between">
           <p>Confidential men’s sexual health care · Richards Town &amp; HSR Layout, Bangalore</p>
           <div className="flex items-center gap-6">
@@ -112,10 +112,10 @@ export function Header() {
               <span className="hidden xl:inline">Search</span>
               <kbd className="hidden rounded-md bg-mist px-1.5 py-0.5 text-[0.7rem] font-semibold xl:inline">⌘K</kbd>
             </button>
-            <button onClick={() => booking.open()} className="hidden h-11 items-center gap-2 rounded-md bg-ink px-5 text-sm font-semibold whitespace-nowrap text-white transition hover:bg-lime hover:text-white sm:flex">
+            <button onClick={() => booking.open()} className="hidden h-11 items-center gap-2 rounded-md bg-lime-700 px-5 text-sm font-semibold whitespace-nowrap text-white transition hover:bg-lime hover:text-white sm:flex">
               <CalendarCheck className="size-4" /> <span>Book<span className="lg:max-xl:hidden"> an Appointment</span></span>
             </button>
-            <button onClick={() => setMobile(true)} className="grid size-11 place-items-center rounded-full bg-ink text-white lg:hidden" aria-label="Open menu">
+            <button onClick={() => setMobile(true)} className="grid size-11 place-items-center rounded-full bg-lime-700 text-white lg:hidden" aria-label="Open menu">
               <Menu className="size-5" />
             </button>
           </div>
@@ -159,7 +159,7 @@ export function Header() {
       <AnimatePresence>
         {mobile && (
           <motion.div
-            className="fixed inset-0 z-[70] flex flex-col bg-ink text-white lg:hidden"
+            className="fixed inset-0 z-[70] flex flex-col bg-block text-ink lg:hidden"
             initial={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
             animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
             exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
@@ -168,7 +168,7 @@ export function Header() {
           >
             <div className="flex h-20 items-center justify-between px-5">
               <span className="rounded-lg bg-white px-3 py-2"><Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={132} height={62} className="h-11 w-auto" /></span>
-              <button onClick={() => setMobile(false)} className="grid size-11 place-items-center rounded-full bg-white/10" aria-label="Close menu"><X className="size-5" /></button>
+              <button onClick={() => setMobile(false)} className="grid size-11 place-items-center rounded-full bg-white/70" aria-label="Close menu"><X className="size-5" /></button>
             </div>
             <div className="flex-1 overflow-y-auto px-5 pb-10">
               <nav className="grid gap-1" aria-label="Mobile">
@@ -178,17 +178,17 @@ export function Header() {
                   { label: "Contact", href: "/contact" },
                 ].map((l, i) => (
                   <motion.div key={l.href} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15 + i * 0.05 }}>
-                    <Link href={l.href} className="h-display flex items-center justify-between border-b border-white/10 py-4 text-3xl">
-                      {l.label} <ArrowRight className="size-5 text-lime-300" />
+                    <Link href={l.href} className="h-display flex items-center justify-between border-b border-ink/10 py-4 text-3xl">
+                      {l.label} <ArrowRight className="size-5 text-lime-700" />
                     </Link>
                   </motion.div>
                 ))}
-                <a href={site.blogUrl} target="_blank" rel="noopener noreferrer" className="h-display flex items-center justify-between border-b border-white/10 py-4 text-3xl">Blog <ArrowUpRight className="size-5 text-lime-300" /></a>
+                <a href={site.blogUrl} target="_blank" rel="noopener noreferrer" className="h-display flex items-center justify-between border-b border-ink/10 py-4 text-3xl">Blog <ArrowUpRight className="size-5 text-lime-700" /></a>
               </nav>
-              <p className="mt-8 text-xs font-bold tracking-[0.14em] text-lime-300 uppercase">Popular treatments</p>
+              <p className="mt-8 text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Popular treatments</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {treatments.slice(0, 8).map((t) => (
-                  <Link key={t.slug} href={`/treatments/${t.slug}`} className="rounded-md border border-white/15 px-3.5 py-2 text-sm">{t.name}</Link>
+                  <Link key={t.slug} href={`/treatments/${t.slug}`} className="rounded-md border border-ink/15 px-3.5 py-2 text-sm">{t.name}</Link>
                 ))}
               </div>
               <button onClick={() => { setMobile(false); booking.open(); }} className="mt-8 flex h-14 w-full items-center justify-center gap-2 rounded-md bg-lime font-bold text-white">

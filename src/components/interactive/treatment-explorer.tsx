@@ -28,7 +28,7 @@ export function TreatmentExplorer() {
               aria-pressed={cat === c.id}
               className={cn("relative shrink-0 rounded-md px-5 py-3 text-sm font-semibold transition-colors", cat === c.id ? "text-white" : "bg-cream text-ink/70 hover:text-ink")}
             >
-              {cat === c.id && <motion.span layoutId="tx-pill" className="absolute inset-0 rounded-md bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
+              {cat === c.id && <motion.span layoutId="tx-pill" className="absolute inset-0 rounded-md bg-lime-700" transition={{ type: "spring", stiffness: 380, damping: 32 }} />}
               <span className="relative">{c.label}</span>
             </button>
           ))}
@@ -57,7 +57,7 @@ export function TreatmentExplorer() {
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">{categories.find((c) => c.id === t.category)?.label}</span>
-                    <span className="grid size-10 place-items-center rounded-full border border-line transition group-hover:rotate-45 group-hover:border-ink group-hover:bg-ink group-hover:text-white"><ArrowUpRight className="size-4" /></span>
+                    <span className="grid size-10 place-items-center rounded-full border border-line transition group-hover:rotate-45 group-hover:border-lime-700 group-hover:bg-lime-700 group-hover:text-white"><ArrowUpRight className="size-4" /></span>
                   </div>
                   <h2 className="h-display mt-3 text-2xl">{t.name}</h2>
                   <p className="mt-2 line-clamp-3 text-muted">{t.summary}</p>

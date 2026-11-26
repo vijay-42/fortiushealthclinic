@@ -46,7 +46,7 @@ export function BannerSlider({ slides, interval = 5000 }: { slides: readonly Sli
       <div className="mt-4 flex items-center justify-between gap-4">
         <div className="flex gap-1.5" role="tablist" aria-label="Banners">
           {slides.map((sl, n) => (
-            <button key={sl.src} type="button" role="tab" aria-selected={n === i} aria-label={`Banner ${n + 1}`} onClick={() => go(n)} className={cn("h-1.5 rounded-full transition-all", n === i ? "w-8 bg-ink" : "w-3 bg-ink/20 hover:bg-ink/40")} />
+            <button key={sl.src} type="button" role="tab" aria-selected={n === i} aria-label={`Banner ${n + 1}`} onClick={() => go(n)} className={cn("h-1.5 rounded-full transition-all", n === i ? "w-8 bg-lime-700" : "w-3 bg-ink/20 hover:bg-ink/40")} />
           ))}
         </div>
         <div className="flex gap-2">
