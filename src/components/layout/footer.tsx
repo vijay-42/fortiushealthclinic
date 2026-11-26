@@ -30,7 +30,7 @@ export function Footer() {
       <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.3fr]">
         <div>
           <span className="inline-block rounded-lg bg-white px-4 py-3">
-            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={84} className="h-14 w-auto" />
+            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={82} className="h-14 w-auto" />
           </span>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">{site.footerBlurb}</p>
           <div className="mt-6 flex gap-2">
