@@ -65,7 +65,7 @@ export function Header() {
         <div className={cn("border-b transition-colors duration-300", scrolled || menu || pathname !== "/" ? "border-line bg-white" : "border-transparent bg-transparent")}>
         <div className="container-x flex h-[4.5rem] items-center gap-4">
           <Link href="/" className="relative shrink-0" aria-label="Fortius Health Clinic — home">
-            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={84} priority className="h-14 w-auto" />
+            <Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={176} height={82} priority className="h-14 w-auto" />
           </Link>
 
           <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Main">
@@ -132,7 +132,7 @@ export function Header() {
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="absolute inset-x-0 top-full hidden lg:block"
             >
-              <div className="container-x grid grid-cols-[1fr_1fr_1fr_1fr_17rem] gap-8 border-b border-line bg-white py-8 shadow-lift">
+              <div className="container-x grid grid-cols-4 gap-8 border-b border-line bg-white py-8 shadow-lift">
                 {categories.map((c) => (
                   <div key={c.id}>
                     <p className="text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">{c.label}</p>
@@ -149,14 +149,6 @@ export function Header() {
                     </ul>
                   </div>
                 ))}
-                <div className="relative overflow-hidden rounded-lg bg-ink p-6 text-white">
-                  <p className="h-display relative text-2xl leading-tight">Not sure where to start?</p>
-                  <p className="relative mt-3 text-sm text-white/70">Use our private Care Finder — 3 taps, nothing stored.</p>
-                  <Link href="/#care-finder" className="relative mt-6 inline-flex items-center gap-2 rounded-md bg-lime px-4 py-2.5 text-sm font-bold text-white">
-                    Open Care Finder <ArrowRight className="size-4" />
-                  </Link>
-                  <Link href="/treatments" className="relative mt-3 block text-sm font-semibold text-white/80 underline underline-offset-4">View all treatments</Link>
-                </div>
               </div>
             </motion.div>
           )}
@@ -175,7 +167,7 @@ export function Header() {
             data-lenis-prevent
           >
             <div className="flex h-20 items-center justify-between px-5">
-              <span className="rounded-lg bg-white px-3 py-2"><Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={132} height={63} className="h-11 w-auto" /></span>
+              <span className="rounded-lg bg-white px-3 py-2"><Image src="/images/brand/logo.png" alt="Fortius Health Clinic" width={132} height={62} className="h-11 w-auto" /></span>
               <button onClick={() => setMobile(false)} className="grid size-11 place-items-center rounded-full bg-white/10" aria-label="Close menu"><X className="size-5" /></button>
             </div>
             <div className="flex-1 overflow-y-auto px-5 pb-10">

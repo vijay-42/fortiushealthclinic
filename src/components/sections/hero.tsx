@@ -23,7 +23,7 @@ export function Hero() {
     <section ref={ref} className="relative -mt-[4.5rem] overflow-hidden bg-cream pt-28 pb-14 lg:pt-32 lg:pb-16">
       <div className="container-x relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
         <div>
-          <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="eyebrow">
+          <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="eyebrow before:hidden">
             {site.heroTitle}
           </motion.span>
 
