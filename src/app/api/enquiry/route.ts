@@ -8,6 +8,7 @@ const schema = z.object({
   concern: z.string().max(100).optional(),
   branch: z.string().max(100).optional(),
   source: z.string().max(50).optional(),
+  preferred: z.string().max(100).optional(),
   company: z.string().optional(), // honeypot
 });
 
@@ -40,6 +41,7 @@ export async function POST(request: Request) {
     message: data.message || "",
     concern: data.concern || "General",
     branch: data.branch || "",
+    preferred: data.preferred || "",
     source: data.source || "website",
     receivedAt: new Date().toISOString(),
   };

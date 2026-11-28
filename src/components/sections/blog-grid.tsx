@@ -12,7 +12,7 @@ export function BlogGrid() {
     <section className="py-24 lg:py-32">
       <div className="container-x">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Latest news" title={<>Browse our <span className="text-gradient">articles</span></>} />
+          <SectionHeading eyebrow="Latest news" title={<>Browse our <span className="text-accent">articles</span></>} />
           <Button href="/blog" variant="outline">View all articles <ArrowRight className="size-4" /></Button>
         </div>
         <Stagger className="mt-14 grid gap-6 lg:grid-cols-2">

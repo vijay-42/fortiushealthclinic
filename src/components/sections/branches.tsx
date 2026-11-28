@@ -14,7 +14,7 @@ export function Branches({ heading = true }: { heading?: boolean }) {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-x">
-        {heading && <SectionHeading eyebrow="Contact us" title={<>Be free, <span className="text-gradient">get in touch</span></>} />}
+        {heading && <SectionHeading eyebrow="Contact us" title={<>Be free, <span className="text-accent">get in touch</span></>} />}
         <Reveal className={cn("grid gap-6 lg:grid-cols-[0.9fr_1.1fr]", heading && "mt-12")}>
           <div className="grid content-start gap-4">
             {site.branches.map((br, i) => (

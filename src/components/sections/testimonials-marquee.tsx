@@ -11,7 +11,7 @@ export function TestimonialsMarquee() {
   return (
     <section className="relative overflow-hidden bg-block py-24 text-ink lg:py-32">
       <div className="container-x relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-        <SectionHeading eyebrow="Testimonial" title={<>What patients say <span className="text-gradient">about Fortius</span></>} />
+        <SectionHeading eyebrow="Testimonial" title={<>What patients say <span className="text-accent">about Fortius</span></>} />
         <Button href="/testimonials" variant="light">Read all stories <ArrowRight className="size-4" /></Button>
       </div>
       <div className="relative mt-14 grid gap-6">

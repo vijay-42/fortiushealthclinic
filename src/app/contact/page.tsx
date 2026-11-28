@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <span className="eyebrow">Send message</span>
-            <h2 className="h-display mt-5 text-4xl sm:text-5xl">We’re here to <span className="text-gradient">listen</span></h2>
+            <h2 className="h-display mt-5 text-4xl sm:text-5xl">We’re here to <span className="text-accent">listen</span></h2>
             <p className="mt-5 text-lg text-muted">Share as much or as little as you like. Every enquiry is handled discreetly by our clinical team.</p>
           </Reveal>
           <Reveal delay={0.1} className="rounded-xl border border-line bg-white p-6 shadow-soft sm:p-10"><EnquiryForm source="contact-page" /></Reveal>

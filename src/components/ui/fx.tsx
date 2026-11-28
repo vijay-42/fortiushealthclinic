@@ -10,18 +10,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
-  return <motion.div aria-hidden style={{ scaleX }} className="fixed inset-x-0 top-0 z-[90] h-[3px] origin-left bg-gradient-to-r from-lime via-lime-600 to-orange" />;
-}
-
-/** Soft, slowly drifting colour blobs for section backgrounds. */
-export function Blobs({ className }: { className?: string }) {
-  return (
-    <div aria-hidden className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
-      <span className="blob top-[-10%] left-[-8%] size-[28rem] bg-lime-200/60" />
-      <span className="blob top-[30%] right-[-10%] size-[32rem] bg-orange/25 [animation-delay:-6s]" />
-      <span className="blob bottom-[-20%] left-[30%] size-[26rem] bg-block [animation-delay:-12s]" />
-    </div>
-  );
+  return <motion.div aria-hidden style={{ scaleX }} className="fixed inset-x-0 top-0 z-[90] h-[3px] origin-left bg-lime" />;
 }
 
 /** Card with a cursor-following glow and a gentle 3D tilt. */

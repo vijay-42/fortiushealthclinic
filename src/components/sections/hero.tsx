@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { doctor, site } from "@/content/site";
 import { useBooking } from "@/components/interactive/booking";
 import { Button } from "@/components/ui/button";
-import { Blobs, Float, Scribble } from "@/components/ui/fx";
+import { Float, Scribble } from "@/components/ui/fx";
 import { Marquee } from "@/components/ui/marquee";
 
 const trust = [
@@ -33,7 +33,6 @@ export function Hero() {
 
   return (
     <section ref={ref} className="relative -mt-[4.5rem] overflow-hidden bg-cream pt-28 lg:pt-32">
-      <Blobs />
       <div className="container-x relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
         <div>
           <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="eyebrow before:hidden">

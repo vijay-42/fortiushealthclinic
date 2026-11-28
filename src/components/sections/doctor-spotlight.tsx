@@ -10,7 +10,7 @@ export function DoctorSpotlight({ showTeam = true }: { showTeam?: boolean }) {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-x">
-        <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-gradient">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14 lg:mb-20" />
+        <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-accent">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14 lg:mb-20" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal className="relative">
             <span aria-hidden className="absolute -top-5 -left-5 hidden size-40 rounded-xl bg-lime-100 lg:block" />

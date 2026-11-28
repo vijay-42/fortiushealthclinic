@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Blobs } from "@/components/ui/fx";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -15,7 +14,6 @@ export function PageHero({
 }) {
   return (
     <section className="relative -mt-[4.5rem] overflow-hidden bg-block pt-36 pb-20 text-ink lg:pt-44 lg:pb-28">
-      <Blobs className="opacity-70" />
       {image && (
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.6, ease }} className="absolute inset-y-0 right-0 w-full lg:w-[58%] lg:[mask-image:linear-gradient(to_right,transparent_10%,black_55%)]">
           <Image src={image} alt="" fill priority sizes="(min-width: 1024px) 58vw, 100vw" className="object-cover" />

@@ -41,7 +41,7 @@ export function AboutIntro() {
           <Reveal>
             <span className="eyebrow">About Us</span>
             <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl lg:text-[3.4rem]">
-              Comprehensive care for <span className="text-gradient">men’s sexual health</span> &amp; vitality
+              Comprehensive care for <span className="text-accent">men’s sexual health</span> &amp; vitality
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

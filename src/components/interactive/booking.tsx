@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowLeft, ArrowRight, Check, Lock, MapPin, MessageCircle, Phone, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Lock, MapPin, MessageCircle, Moon, Phone, Sun, Sunrise, X } from "lucide-react";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { site, whatsappLink } from "@/content/site";
 import { treatments } from "@/content/treatments";
@@ -35,12 +35,33 @@ export function BookButton({ concern, className, children }: { concern?: string;
   );
 }
 
-const steps = ["Concern", "Clinic", "Details"] as const;
+const steps = ["Concern", "Clinic", "Day & time", "Details"] as const;
+
+const slots = [
+  { id: "Morning", hint: "Before 12 noon", icon: Sunrise },
+  { id: "Afternoon", hint: "12 noon – 4 PM", icon: Sun },
+  { id: "Evening", hint: "After 4 PM", icon: Moon },
+] as const;
+
+function nextDays(n = 7) {
+  const out: { key: string; top: string; day: string; label: string }[] = [];
+  const d = new Date();
+  for (let i = 0; i < n; i++) {
+    const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+    const day = x.toLocaleDateString("en-IN", { day: "numeric" });
+    const top = i === 0 ? "Today" : i === 1 ? "Tomorrow" : x.toLocaleDateString("en-IN", { weekday: "short" });
+    out.push({ key: x.toDateString(), top, day, label: `${top === "Today" || top === "Tomorrow" ? top + ", " : ""}${x.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}` });
+  }
+  return out;
+}
 
 function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; onClose: () => void }) {
   const [step, setStep] = useState(initialConcern ? 1 : 0);
   const [concern, setConcern] = useState<string>(initialConcern ?? "");
   const [branch, setBranch] = useState<string>(site.branches[0].id);
+  const days = useMemo(() => nextDays(), []);
+  const [day, setDay] = useState(days[0].key);
+  const [slot, setSlot] = useState<string>("");
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", company: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [error, setError] = useState("");
@@ -61,7 +82,9 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
   const concernName = treatments.find((t) => t.slug === concern)?.name ?? (concern === "general" ? "General consultation" : "");
   const branchObj = site.branches.find((b) => b.id === branch)!;
 
-  const waText = `Hi Fortius, I'd like to book a consultation.\nConcern: ${concernName || "General"}\nClinic: ${branchObj.name}${form.name ? `\nName: ${form.name}` : ""}`;
+  const dayObj = days.find((d) => d.key === day) ?? days[0];
+  const preferred = slot ? `${dayObj.label} · ${slot}` : "";
+  const waText = `Hi Fortius, I'd like to book a consultation.\nConcern: ${concernName || "General"}\nClinic: ${branchObj.name}${preferred ? `\nPreferred: ${preferred}` : ""}${form.name ? `\nName: ${form.name}` : ""}`;
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -73,7 +96,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, concern: concernName || "General", branch: branchObj.name, source: "booking-drawer" }),
+        body: JSON.stringify({ ...form, concern: concernName || "General", branch: branchObj.name, preferred, source: "booking-drawer" }),
       });
       if (!res.ok) throw new Error();
       setStatus("done");
@@ -114,11 +137,14 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
 
         {status === "done" ? (
           <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }} className="grid size-20 place-items-center rounded-full bg-lime text-white">
-              <Check className="size-10" strokeWidth={3} />
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }} className="relative grid size-20 place-items-center rounded-full bg-lime text-white">
+              <motion.span className="absolute inset-0 rounded-full border-4 border-lime" initial={{ scale: 1, opacity: 0.6 }} animate={{ scale: 1.8, opacity: 0 }} transition={{ duration: 1.2, repeat: 2 }} />
+              <svg viewBox="0 0 24 24" className="size-10" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+                <motion.path d="M20 6 9 17l-5-5" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, delay: 0.3 }} />
+              </svg>
             </motion.div>
             <h3 className="h-display mt-8 text-3xl">Thank you, {form.name.split(" ")[0]}.</h3>
-            <p className="mt-3 max-w-sm text-muted">Our team will call you shortly on {form.phone} to confirm your appointment at our {branchObj.name} clinic.</p>
+            <p className="mt-3 max-w-sm text-muted">Our team will call you shortly on {form.phone} to confirm your appointment at our {branchObj.name} clinic{preferred ? ` (${preferred})` : ""}.</p>
             <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 font-semibold text-white">
               <MessageCircle className="size-5" /> Continue on WhatsApp
             </a>
@@ -187,9 +213,39 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
               )}
 
               {step === 2 && (
-                <motion.form key="s2" onSubmit={submit} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} noValidate>
+                <motion.div key="s2" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
+                  <h3 className="h-display text-3xl">When would you like to come?</h3>
+                  <p className="mt-2 text-muted">Pick a preferred day and time. We’ll call to confirm the exact slot.</p>
+                  <div className="no-scrollbar -mx-6 mt-6 flex gap-2 overflow-x-auto px-6 pb-1 sm:-mx-8 sm:px-8">
+                    {days.map((d) => (
+                      <button key={d.key} type="button" onClick={() => setDay(d.key)} aria-pressed={day === d.key}
+                        className={cn("relative flex w-[4.6rem] shrink-0 flex-col items-center rounded-lg border py-3 transition", day === d.key ? "border-lime-700 text-white" : "border-line bg-white hover:border-lime")}>
+                        {day === d.key && <motion.span layoutId="day-pill" className="absolute inset-0 rounded-lg bg-lime-700" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
+                        <span className={cn("relative text-[0.7rem] font-semibold uppercase", day === d.key ? "text-white/80" : "text-muted")}>{d.top}</span>
+                        <span className="relative h-display mt-1 text-2xl">{d.day}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                    {slots.map(({ id, hint, icon: I }) => (
+                      <motion.button key={id} type="button" whileTap={{ scale: 0.96 }} onClick={() => setSlot(id)} aria-pressed={slot === id}
+                        className={cn("flex items-center gap-3 rounded-lg border-2 bg-white p-4 text-left transition sm:flex-col sm:items-start", slot === id ? "border-lime" : "border-transparent shadow-soft hover:border-lime-200")}>
+                        <span className={cn("grid size-10 place-items-center rounded-md transition", slot === id ? "bg-lime text-white" : "bg-mist text-ink-soft")}><I className="size-5" /></span>
+                        <span><span className="block font-bold">{id}</span><span className="text-sm text-muted">{hint}</span></span>
+                      </motion.button>
+                    ))}
+                  </div>
+                  <div className="mt-8 flex justify-between">
+                    <button type="button" onClick={() => setStep(1)} className="inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
+                    <button type="button" onClick={() => setStep(3)} className="inline-flex h-12 items-center gap-2 rounded-md bg-lime-700 px-6 font-semibold text-white">{slot ? "Continue" : "Skip"} <ArrowRight className="size-4" /></button>
+                  </div>
+                </motion.div>
+              )}
+
+              {step === 3 && (
+                <motion.form key="s3" onSubmit={submit} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} noValidate>
                   <h3 className="h-display text-3xl">Your details</h3>
-                  <p className="mt-2 text-muted">{concernName || "General consultation"} · {branchObj.name}</p>
+                  <p className="mt-2 text-muted">{concernName || "General consultation"} · {branchObj.name}{preferred && ` · ${preferred}`}</p>
                   <div className="mt-6 grid gap-4">
                     <Field label="Name" required value={form.name} onChange={(v) => setForm({ ...form, name: v })} autoComplete="name" />
                     <Field label="Phone number" required type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} autoComplete="tel" />
@@ -208,7 +264,7 @@ function BookingDrawer({ initialConcern, onClose }: { initialConcern?: string; o
                     <a href={whatsappLink(waText)} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] font-semibold text-white"><MessageCircle className="size-5" /> WhatsApp</a>
                     <a href={`tel:${branchObj.phone.tel}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white font-semibold shadow-soft"><Phone className="size-4" /> Call clinic</a>
                   </div>
-                  <button type="button" onClick={() => setStep(1)} className="mt-6 inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
+                  <button type="button" onClick={() => setStep(2)} className="mt-6 inline-flex items-center gap-2 font-semibold text-muted"><ArrowLeft className="size-4" /> Back</button>
                 </motion.form>
               )}
             </AnimatePresence>

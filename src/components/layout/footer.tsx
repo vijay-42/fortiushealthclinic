@@ -14,7 +14,7 @@ export function Footer() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-8 border-b border-ink/10 py-16 lg:flex-row lg:items-end">
           <h2 className="h-display max-w-3xl text-4xl leading-[1.05] sm:text-6xl">
-            Ready to get started <span className="text-gradient">with Fortius?</span>
+            Ready to get started <span className="text-accent">with Fortius?</span>
           </h2>
           <div className="flex flex-wrap gap-3">
             <BookButton className="inline-flex h-14 items-center gap-2 rounded-md bg-lime px-7 font-bold text-white transition hover:bg-lime-700">

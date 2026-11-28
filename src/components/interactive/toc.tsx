@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export function ReadingProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
-  return <motion.div style={{ scaleX }} className="fixed inset-x-0 top-0 z-[60] h-1 origin-left bg-gradient-to-r from-lime to-orange" />;
+  return <motion.div style={{ scaleX }} className="fixed inset-x-0 top-0 z-[60] h-1 origin-left bg-lime" />;
 }
 
 export function Toc({ items }: { items: { id: string; label: string }[] }) {

@@ -29,20 +29,10 @@
   --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
 
   --animate-shine: shine 1.1s ease;
-  --animate-grad: grad 8s ease infinite;
 
   @keyframes shine {
     from { transform: translateX(-120%) skewX(-20deg); }
     to { transform: translateX(220%) skewX(-20deg); }
-  }
-  @keyframes grad {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  @keyframes drift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(6%, -8%) scale(1.08); }
-    66% { transform: translate(-6%, 6%) scale(0.95); }
   }
   @keyframes marquee {
     from { transform: translateX(0); }
@@ -112,13 +102,7 @@
   .prose-blog table { @apply mb-8 block w-full overflow-x-auto rounded-lg border border-line text-sm; border-collapse: collapse; }
   .prose-blog td, .prose-blog th { @apply border border-line px-4 py-3 align-top text-ink-soft; }
   .prose-blog tr:first-child td { @apply bg-cream font-semibold text-ink; }
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(100deg, var(--color-lime-800), #6f9f1a 50%, var(--color-lime-800));
-    background-size: 220% 100%;
-    animation: var(--animate-grad);
-  }
-  .blob { @apply absolute rounded-full blur-3xl; animation: drift 18s ease-in-out infinite; }
+  .text-accent { @apply text-lime-700; }
   .no-scrollbar { scrollbar-width: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
 }

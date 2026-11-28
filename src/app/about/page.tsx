@@ -79,7 +79,7 @@ export default function AboutPage() {
         <div className="container-x">
           <Reveal className="max-w-2xl">
             <span className="eyebrow">Video testimonial</span>
-            <h2 className="h-display mt-5 text-4xl sm:text-5xl">What patients say about <span className="text-gradient">Fortius</span></h2>
+            <h2 className="h-display mt-5 text-4xl sm:text-5xl">What patients say about <span className="text-accent">Fortius</span></h2>
           </Reveal>
           <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
             {videoTestimonials.map((t) => <RevealItem key={t.name}><TestimonialCard t={t} /></RevealItem>)}

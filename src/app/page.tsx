@@ -12,18 +12,22 @@ import { BlogGrid } from "@/components/sections/blog-grid";
 import { FaqEnquiry } from "@/components/sections/faq-enquiry";
 import { Branches } from "@/components/sections/branches";
 import { CareJourney } from "@/components/sections/care-journey";
+import { ClinicTour } from "@/components/sections/clinic-tour";
+import { ScrollStory } from "@/components/sections/scroll-story";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutIntro />
+      <ScrollStory />
       <ServicesGrid />
       <Accolades />
       <CareFinder />
       <ConditionsTabs />
       <CareJourney />
       <PatientServices />
+      <ClinicTour />
       <DoctorSpotlight />
       <TestimonialsMarquee />
       <BlogGrid />

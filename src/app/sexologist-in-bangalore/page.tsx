@@ -163,7 +163,7 @@ export default function SexologistInBangalorePage() {
       <section id="about" className="py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
-            <SectionHeading eyebrow="About us" title={<>Tailored Solutions for <span className="text-gradient">Your Sexual Health</span></>} />
+            <SectionHeading eyebrow="About us" title={<>Tailored Solutions for <span className="text-accent">Your Sexual Health</span></>} />
             <Reveal delay={0.1}>
               <p className="leading-relaxed text-muted">
                 At Fortius Health Clinic, we are committed to enhancing your well-being with personalized treatments that address sexual health concerns and skin conditions. As a trusted sexologist in Bangalore and a dedicated sexual health clinic in Bangalore, our approach focuses on holistic healing, ensuring every patient receives the highest-quality sexual health treatment in Bangalore, along with herbal solutions tailored to their individual needs.
@@ -233,7 +233,7 @@ export default function SexologistInBangalorePage() {
       <section className="py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
-            <SectionHeading eyebrow="Our consultation protocol" title={<>Your Privacy Matters <span className="text-gradient">to Us the Most</span></>} />
+            <SectionHeading eyebrow="Our consultation protocol" title={<>Your Privacy Matters <span className="text-accent">to Us the Most</span></>} />
             <Reveal delay={0.1}><p className="flex items-start gap-3 leading-relaxed text-muted"><Lock className="mt-1 size-4 shrink-0 text-lime-700" /> Your personal information is safe &amp; secure with us, with no space for privacy breach at any cost from our clinic premises &amp; database.</p></Reveal>
           </div>
           <Stagger className="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
@@ -251,7 +251,7 @@ export default function SexologistInBangalorePage() {
       {/* Conditions we treat */}
       <section className="bg-cream py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading eyebrow="Treatments" title={<>Conditions <span className="text-gradient">We Treat</span></>} />
+          <SectionHeading eyebrow="Treatments" title={<>Conditions <span className="text-accent">We Treat</span></>} />
           <Stagger className="mt-12 grid gap-5 md:grid-cols-3">
             {conditions.map((c) => (
               <RevealItem key={c.slug}>
@@ -277,7 +277,7 @@ export default function SexologistInBangalorePage() {
       <section id="services" className="py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
-            <SectionHeading eyebrow="Services" title={<>Male Sexual Health Services at Fortius Health Clinic – <span className="text-gradient">Trusted Sexologist in Bangalore</span></>} titleClassName="lg:text-[2.6rem]! lg:leading-[1.1]!" />
+            <SectionHeading eyebrow="Services" title={<>Male Sexual Health Services at Fortius Health Clinic – <span className="text-accent">Trusted Sexologist in Bangalore</span></>} titleClassName="lg:text-[2.6rem]! lg:leading-[1.1]!" />
             <Reveal delay={0.1}>
               <p className="leading-relaxed text-muted">At Fortius Health Clinic, we understand the impact of male sexual health concerns on overall well-being. Our experienced team, including a trusted sexologist in Bangalore, provides personalized care for conditions such as erectile dysfunction, premature ejaculation, and male infertility. As a dedicated sexual health clinic in Bangalore, we focus on comprehensive assessments, holistic care, and tailored solutions. Our goal is to provide effective sexual health treatment in Bangalore, helping you restore confidence, improve sexual wellness, and enhance your quality of life through compassionate, patient-focused care.</p>
             </Reveal>
@@ -301,7 +301,7 @@ export default function SexologistInBangalorePage() {
       {/* Doctor */}
       <section className="bg-cream py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-gradient">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14" />
+          <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-accent">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14" />
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
             <Reveal className="relative">
               <div className="relative aspect-[562/496] overflow-hidden rounded-xl">
@@ -346,7 +346,7 @@ export default function SexologistInBangalorePage() {
       {/* Countries */}
       <section className="py-20 lg:py-28">
         <div className="container-x">
-          <SectionHeading align="center" eyebrow="Providing our services in" title={<>Patients From <span className="text-gradient">10+ Countries</span></>} />
+          <SectionHeading align="center" eyebrow="Providing our services in" title={<>Patients From <span className="text-accent">10+ Countries</span></>} />
           <Reveal delay={0.1} className="relative mx-auto mt-10 aspect-[1420/663] max-w-5xl">
             <Image src="/images/lp/countries.webp" alt="World map of countries where Fortius Health Clinic serves patients, including India, the Middle East, Bangladesh, Sri Lanka, Maldives, Malaysia and South Africa" fill sizes="(min-width:1024px) 64rem, 100vw" className="object-contain" />
           </Reveal>
@@ -357,7 +357,7 @@ export default function SexologistInBangalorePage() {
       <section id="testimonials" className="bg-cream py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
-            <SectionHeading eyebrow="Testimonials" title={<>Our Special <span className="text-gradient">Patients Say</span></>} />
+            <SectionHeading eyebrow="Testimonials" title={<>Our Special <span className="text-accent">Patients Say</span></>} />
             <Reveal delay={0.1}>
               <p className="leading-relaxed text-muted">At Fortius Health Clinic, our patients&apos; experiences matter most to us. Here, you&apos;ll find feedback from individuals who have received care from the best sexologist doctors in Bangalore. Their journeys reflect the dedication and expertise of our team in addressing various sexual health concerns.</p>
               <p className="mt-5 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold ring-1 ring-line">
@@ -377,7 +377,7 @@ export default function SexologistInBangalorePage() {
       {/* FAQ */}
       <section id="faqs" className="py-20 lg:py-28">
         <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <SectionHeading eyebrow="FAQ" title={<>Frequently Asked <span className="text-gradient">Questions</span></>} />
+          <SectionHeading eyebrow="FAQ" title={<>Frequently Asked <span className="text-accent">Questions</span></>} />
           <Reveal delay={0.1}><FaqList faqs={faqs} /></Reveal>
         </div>
       </section>
@@ -387,7 +387,7 @@ export default function SexologistInBangalorePage() {
         <div className="container-x grid gap-12 lg:grid-cols-2">
           <Reveal>
             <span className="eyebrow">Contact us</span>
-            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Be Free, <span className="text-gradient">Get in Touch</span></h2>
+            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Be Free, <span className="text-accent">Get in Touch</span></h2>
             <ul className="mt-10 grid gap-4">
               <li><a href={`tel:${site.phone.tel}`} className="flex items-center gap-4 rounded-lg bg-white p-5 ring-1 ring-line transition hover:ring-ink"><Phone className="size-5 text-lime-700" /><span className="font-semibold">{site.phone.display}</span></a></li>
               <li><a href={`mailto:${site.emails[0]}`} className="flex items-center gap-4 rounded-lg bg-white p-5 ring-1 ring-line transition hover:ring-ink"><Mail className="size-5 text-lime-700" /><span className="font-semibold">{site.emails[0]}</span></a></li>

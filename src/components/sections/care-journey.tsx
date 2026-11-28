@@ -26,15 +26,15 @@ export function CareJourney() {
   return (
     <section className="relative overflow-hidden py-24 lg:py-32">
       <div className="container-x">
-        <SectionHeading align="center" eyebrow="Your visit" title={<>Four simple steps to <span className="text-gradient">feeling like yourself</span></>} text="From the first call to your last follow-up, every step is private, unhurried and focused on you." />
+        <SectionHeading align="center" eyebrow="Your visit" title={<>Four simple steps to <span className="text-accent">feeling like yourself</span></>} text="From the first call to your last follow-up, every step is private, unhurried and focused on you." />
 
         <div ref={ref} className="relative mt-16 lg:mt-20">
           {/* track */}
           <div aria-hidden className="absolute top-8 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-line lg:block">
-            <motion.div style={{ scaleX: reduce ? 1 : progress }} className="h-full origin-left rounded-full bg-gradient-to-r from-lime to-orange" />
+            <motion.div style={{ scaleX: reduce ? 1 : progress }} className="h-full origin-left rounded-full bg-lime" />
           </div>
           <div aria-hidden className="absolute top-0 bottom-0 left-8 w-[3px] rounded-full bg-line lg:hidden">
-            <motion.div style={{ scaleY: reduce ? 1 : progress }} className="h-full origin-top rounded-full bg-gradient-to-b from-lime to-orange" />
+            <motion.div style={{ scaleY: reduce ? 1 : progress }} className="h-full origin-top rounded-full bg-lime" />
           </div>
 
           <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-8">
