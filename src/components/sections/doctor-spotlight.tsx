@@ -4,21 +4,26 @@ import { doctor, team } from "@/content/site";
 import { Reveal, RevealItem, Stagger } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Float, ImageReveal } from "@/components/ui/fx";
 
 export function DoctorSpotlight({ showTeam = true }: { showTeam?: boolean }) {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-x">
-        <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-muted">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14 lg:mb-20" />
+        <SectionHeading align="center" title={<>Consult an Experienced Sexologist in Bangalore <span className="text-gradient">for Sexual Wellness</span></>} titleClassName="lg:text-[2.9rem]! lg:leading-[1.1]!" className="mb-14 lg:mb-20" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal className="relative">
-            <div className="relative aspect-square overflow-hidden rounded-xl bg-mist">
+            <span aria-hidden className="absolute -top-5 -left-5 hidden size-40 rounded-xl bg-lime-100 lg:block" />
+            <span aria-hidden className="absolute -right-5 -bottom-5 hidden size-40 rounded-xl bg-orange/20 lg:block" />
+            <ImageReveal className="aspect-square rounded-xl bg-mist">
               <Image src={doctor.awardImage} alt={`${doctor.name} at an award ceremony`} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover" />
-            </div>
-            <div className="glass absolute -bottom-6 left-6 right-6 flex items-center gap-4 rounded-lg p-4 shadow-lift sm:right-auto">
-              <Image src={doctor.image} alt="" width={56} height={56} className="size-14 rounded-lg object-cover" />
-              <div><p className="font-bold">{doctor.name}</p><p className="text-sm text-muted">{doctor.role}</p></div>
-            </div>
+            </ImageReveal>
+            <Float className="absolute -bottom-6 left-6 right-6 sm:right-auto" y={6}>
+              <div className="glass flex items-center gap-4 rounded-lg p-4 shadow-lift">
+                <Image src={doctor.image} alt="" width={56} height={56} className="size-14 rounded-lg object-cover" />
+                <div><p className="font-bold">{doctor.name}</p><p className="text-sm text-muted">{doctor.role}</p></div>
+              </div>
+            </Float>
           </Reveal>
           <Reveal delay={0.1}>
             <span className="eyebrow">About the Doctor</span>

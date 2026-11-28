@@ -15,7 +15,7 @@ export function ConditionsTabs() {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-x">
-        <SectionHeading align="center" eyebrow={conditionsShowcase.eyebrow} title={<>Treatment options, <span className="text-muted">tailored to you</span></>} text={conditionsShowcase.text} />
+        <SectionHeading align="center" eyebrow={conditionsShowcase.eyebrow} title={<>Treatment options, <span className="text-gradient">tailored to you</span></>} text={conditionsShowcase.text} />
 
         <div role="tablist" aria-label="Conditions" className="no-scrollbar mx-auto mt-12 flex w-fit max-w-full gap-1 overflow-x-auto rounded-lg border border-line bg-cream p-1.5">
           {conditionsShowcase.items.map((c, i) => (

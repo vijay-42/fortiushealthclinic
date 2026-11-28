@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Gallery", description: "Take a look 
 export default function GalleryPage() {
   return (
     <>
-      <PageHero eyebrow="Gallery" title={<>Visit our <span className="text-white/50">clinic</span></>} text="A calm, private and modern space designed around your comfort and confidentiality." image="/images/gallery/interior-2.jpg" crumbs={[{ label: "Gallery" }]} />
+      <PageHero eyebrow="Gallery" title={<>Visit our <span className="text-lime-700">clinic</span></>} text="A calm, private and modern space designed around your comfort and confidentiality." image="/images/gallery/interior-2.jpg" crumbs={[{ label: "Gallery" }]} />
       <section className="py-16 lg:py-24"><div className="container-x"><GalleryGrid images={gallery} /></div></section>
     </>
   );

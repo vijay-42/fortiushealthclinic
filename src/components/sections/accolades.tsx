@@ -13,7 +13,7 @@ export function Accolades() {
         <Reveal>
           <span className="eyebrow"><Trophy className="size-3.5" /> {accolade.eyebrow}</span>
           <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl lg:text-[3.4rem]">
-            Most Trusted <span className="text-muted">Sexologist</span> of the Year
+            Most Trusted <span className="text-gradient">Sexologist</span> of the Year
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted">{accolade.text}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">

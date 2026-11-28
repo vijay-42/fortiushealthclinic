@@ -50,8 +50,8 @@ export function Header() {
         <div className="container-x flex h-10 items-center justify-between">
           <p>Confidential men’s sexual health care · Richards Town &amp; HSR Layout, Bangalore</p>
           <div className="flex items-center gap-6">
-            <a href={`mailto:${site.emails[0]}`} className="transition hover:text-lime-300">{site.emails[0]}</a>
-            <a href={`tel:${site.phone.tel}`} className="flex items-center gap-1.5 font-semibold text-white transition hover:text-lime-300"><Phone className="size-3.5" /> {site.phone.display}</a>
+            <a href={`mailto:${site.emails[0]}`} className="transition hover:text-lime-700">{site.emails[0]}</a>
+            <a href={`tel:${site.phone.tel}`} className="flex items-center gap-1.5 font-semibold text-ink transition hover:text-lime-700"><Phone className="size-3.5" /> {site.phone.display}</a>
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@ export function Header() {
                     </Link>
                   </motion.div>
                 ))}
-                <a href={site.blogUrl} target="_blank" rel="noopener noreferrer" className="h-display flex items-center justify-between border-b border-ink/10 py-4 text-3xl">Blog <ArrowUpRight className="size-5 text-lime-700" /></a>
+                <Link href="/blog" className="h-display flex items-center justify-between border-b border-ink/10 py-4 text-3xl">Blog <ArrowRight className="size-5 text-lime-700" /></Link>
               </nav>
               <p className="mt-8 text-xs font-bold tracking-[0.14em] text-lime-700 uppercase">Popular treatments</p>
               <div className="mt-3 flex flex-wrap gap-2">

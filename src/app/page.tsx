@@ -11,6 +11,7 @@ import { TestimonialsMarquee } from "@/components/sections/testimonials-marquee"
 import { BlogGrid } from "@/components/sections/blog-grid";
 import { FaqEnquiry } from "@/components/sections/faq-enquiry";
 import { Branches } from "@/components/sections/branches";
+import { CareJourney } from "@/components/sections/care-journey";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Accolades />
       <CareFinder />
       <ConditionsTabs />
+      <CareJourney />
       <PatientServices />
       <DoctorSpotlight />
       <TestimonialsMarquee />

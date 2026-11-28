@@ -13,7 +13,7 @@ export function FaqEnquiry({ faqs }: { faqs: Faq[] }) {
         <div>
           <Reveal>
             <span className="eyebrow">FAQs</span>
-            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Frequently Asked <span className="text-muted">Questions</span></h2>
+            <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl">Frequently Asked <span className="text-gradient">Questions</span></h2>
           </Reveal>
           <Reveal delay={0.1} className="mt-10"><FaqList faqs={faqs} /></Reveal>
         </div>

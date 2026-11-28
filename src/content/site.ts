@@ -7,7 +7,7 @@ export const site = {
   name: "Fortius Health Clinic",
   tagline: "for Happy Healthy Lives",
   url: "https://www.fortiushealthclinic.co",
-  blogUrl: "https://www.fortiushealthclinic.co/blog",
+  blogUrl: "/blog",
   title: "Best Sexologist Hospital in Bangalore | Sexologist Doctor Bangalore",
   description:
     "Fortius Health Clinic specializes in treating men’s sexual health in Bangalore with expert care, confidentiality, and data security. Led by award-winning sexologist Dr. Mujahid Jameel.",
@@ -65,7 +65,7 @@ export const nav = [
     ],
   },
   { label: "Treatments", href: "/treatments", mega: true },
-  { label: "Blog", href: site.blogUrl, external: true },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

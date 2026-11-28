@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Blobs } from "@/components/ui/fx";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -14,12 +15,13 @@ export function PageHero({
 }) {
   return (
     <section className="relative -mt-[4.5rem] overflow-hidden bg-block pt-36 pb-20 text-ink lg:pt-44 lg:pb-28">
+      <Blobs className="opacity-70" />
       {image && (
-        <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.35 }} transition={{ duration: 1.6, ease }} className="absolute inset-0">
-          <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
+        <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.6, ease }} className="absolute inset-y-0 right-0 w-full lg:w-[58%] lg:[mask-image:linear-gradient(to_right,transparent_10%,black_55%)]">
+          <Image src={image} alt="" fill priority sizes="(min-width: 1024px) 58vw, 100vw" className="object-cover" />
         </motion.div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-block via-block/90 to-block/60" />
+      <div className="absolute inset-0 bg-block/80 lg:hidden" />
       <div className="container-x relative">
         <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-muted">
           <Link href="/" className="hover:text-lime-700">Home</Link>

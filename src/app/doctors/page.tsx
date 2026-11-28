@@ -61,7 +61,7 @@ export default function DoctorsPage() {
           <BookButton className="inline-flex h-12 items-center gap-2 rounded-md bg-lime px-6 font-semibold text-white transition hover:bg-lime-700">
             <CalendarCheck className="size-4" /> Book with Dr. Jameel
           </BookButton>
-          <a href={whatsappLink("Hi Fortius, I'd like an appointment with Dr. Mujahid Jameel.")} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2 rounded-md border border-white/20 px-6 font-semibold transition hover:border-lime-300 hover:text-lime-300">
+          <a href={whatsappLink("Hi Fortius, I'd like an appointment with Dr. Mujahid Jameel.")} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2 rounded-md border border-ink/20 px-6 font-semibold transition hover:border-lime-700 hover:text-lime-700">
             <MessageCircle className="size-4" /> WhatsApp
           </a>
         </div>

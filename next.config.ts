@@ -33,6 +33,10 @@ const nextConfig: NextConfig = {
     return [
       ...pageRedirects.map(([source, destination]) => ({ source, destination, permanent: true })),
       ...legacyRedirects.map((r) => ({ source: r.from, destination: r.to, permanent: true })),
+      { source: "/blog/category/:path*", destination: "/blog", permanent: true },
+      { source: "/blog/page/:n", destination: "/blog", permanent: true },
+      { source: "/blog/author/:path*", destination: "/blog", permanent: true },
+      { source: "/blog/tag/:path*", destination: "/blog", permanent: true },
     ];
   },
 };

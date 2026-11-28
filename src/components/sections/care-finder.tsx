@@ -55,7 +55,7 @@ export function CareFinder() {
         <div>
           <span className="eyebrow">Care Finder · new</span>
           <h2 className="h-display mt-5 text-4xl leading-[1.05] sm:text-5xl lg:text-[3.5rem]">
-            Not sure where to start? <span className="text-muted">Find the right care</span> in 3 taps.
+            Not sure where to start? <span className="text-gradient">Find the right care</span> in 3 taps.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
             Many men find it hard to put a concern into words. Pick what feels closest and we’ll point you to the right treatment and specialist.

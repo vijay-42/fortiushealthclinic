@@ -1,12 +1,24 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Award, CalendarCheck, Lock, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Award, CalendarCheck, Globe2, HeartPulse, Lock, MapPin, ShieldCheck, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 import { doctor, site } from "@/content/site";
 import { useBooking } from "@/components/interactive/booking";
 import { Button } from "@/components/ui/button";
+import { Blobs, Float, Scribble } from "@/components/ui/fx";
+import { Marquee } from "@/components/ui/marquee";
+
+const trust = [
+  { icon: Lock, label: "100% confidential consultations" },
+  { icon: Award, label: "Award-winning sexologist" },
+  { icon: Users, label: "10,000+ patients treated" },
+  { icon: Globe2, label: "Patients from 10+ countries" },
+  { icon: MapPin, label: "Richards Town & HSR Layout" },
+  { icon: HeartPulse, label: "Personalised treatment plans" },
+  { icon: ShieldCheck, label: "Safe, evidence-based care" },
+];
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -20,7 +32,8 @@ export function Hero() {
   const words = ["Best", "Sexologist", "Hospital"];
 
   return (
-    <section ref={ref} className="relative -mt-[4.5rem] overflow-hidden bg-cream pt-28 pb-14 lg:pt-32 lg:pb-16">
+    <section ref={ref} className="relative -mt-[4.5rem] overflow-hidden bg-cream pt-28 lg:pt-32">
+      <Blobs />
       <div className="container-x relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
         <div>
           <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }} className="eyebrow before:hidden">
@@ -36,8 +49,9 @@ export function Hero() {
               </span>
             ))}
             <span className="block overflow-hidden pb-2">
-              <motion.span className="inline-block text-lime-700" initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.38, ease }}>
+              <motion.span className="relative inline-block text-lime-700" initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.38, ease }}>
                 in Bangalore
+                <Scribble delay={1.1} />
               </motion.span>
             </span>
           </h1>
@@ -47,7 +61,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6, ease }} className="mt-7 flex flex-wrap gap-3">
-            <Button onClick={() => open()}><CalendarCheck className="size-5" /> Book an Appointment</Button>
+            <Button magnetic onClick={() => open()}><CalendarCheck className="size-5" /> Book an Appointment</Button>
             <Button variant="outline" href="#care-finder">Find the right care <ArrowRight className="size-4 transition group-hover:translate-x-1" /></Button>
           </motion.div>
 
@@ -59,11 +73,12 @@ export function Hero() {
         </div>
 
         {/* Visual */}
+        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease }}
-          className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-xl bg-mist shadow-lift lg:aspect-[5/4] lg:max-w-none"
+          initial={{ opacity: 0, scale: 0.94, clipPath: "inset(12% 12% 12% 12% round 24px)" }}
+          animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0% round 12px)" }}
+          transition={{ duration: 1.4, ease }}
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-mist shadow-lift lg:aspect-[5/4]"
         >
           <motion.div style={{ y: yImg, scale: 1.08 }} className="absolute inset-0">
             <Image src="/images/hero/reception.jpg" alt="Fortius Health Clinic reception, Bangalore" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover object-[center_70%]" />
@@ -103,7 +118,38 @@ export function Hero() {
             </div>
           </motion.div>
         </motion.div>
+
+          {/* Floating badges */}
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 1, ease }} className="absolute -top-5 right-4 z-10 hidden sm:block lg:-right-6">
+            <Float y={8}>
+              <div className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-lift">
+                <span className="grid size-10 place-items-center rounded-md bg-orange/15 text-orange-600"><Users className="size-5" /></span>
+                <div><p className="h-display text-xl leading-none">10K+</p><p className="mt-0.5 text-xs font-semibold text-muted">Patients treated</p></div>
+              </div>
+            </Float>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 1.15, ease }} className="absolute top-1/3 -left-8 z-10 hidden lg:block">
+            <Float y={10} delay={1.2}>
+              <div className="rounded-lg bg-white px-4 py-3 shadow-lift">
+                <div className="flex gap-0.5 text-orange">{[0, 1, 2, 3, 4].map((i) => <Star key={i} className="size-3.5 fill-current" />)}</div>
+                <p className="mt-1.5 text-sm font-bold">13+ years of care</p>
+                <p className="text-xs text-muted">Trusted by families</p>
+              </div>
+            </Float>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Trust strip */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="relative mt-12 border-y border-ink/5 bg-white/60 py-4 backdrop-blur lg:mt-14">
+        <Marquee duration={45}>
+          {trust.map(({ icon: I, label }) => (
+            <span key={label} className="flex shrink-0 items-center gap-2.5 text-sm font-semibold whitespace-nowrap text-ink-soft">
+              <I className="size-4 text-lime-700" /> {label} <span className="ml-4 size-1.5 rounded-full bg-orange" />
+            </span>
+          ))}
+        </Marquee>
+      </motion.div>
     </section>
   );
 }

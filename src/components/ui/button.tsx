@@ -44,7 +44,10 @@ export function Button(props: AsLink | AsButton) {
   );
 
   const content = (
-    <motion.span style={{ x, y }} className={cls} ref={ref} onPointerMove={onMove} onPointerLeave={reset}>
+    <motion.span style={{ x, y }} className={cn(cls, (variant === "primary" || variant === "dark") && "overflow-hidden")} ref={ref} onPointerMove={onMove} onPointerLeave={reset}>
+      {(variant === "primary" || variant === "dark") && (
+        <span aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-1/3 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/35 to-transparent group-hover:animate-shine" />
+      )}
       {children}
     </motion.span>
   );

@@ -61,7 +61,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
 
       <PageHero
         eyebrow={cat.label}
-        title={<>{t.name} <span className="text-white/50">Treatment</span> in Bangalore</>}
+        title={<>{t.name} <span className="text-lime-700">Treatment</span> in Bangalore</>}
         text={t.tagline}
         image={t.image ?? "/images/gallery/interior-4.jpg"}
         crumbs={[{ label: "Treatments", href: "/treatments" }, { label: t.name }]}
@@ -70,7 +70,7 @@ export default async function TreatmentPage({ params }: PageProps<"/treatments/[
           <BookButton concern={t.slug} className="inline-flex h-14 items-center gap-2 rounded-md bg-lime px-7 font-bold text-white transition hover:bg-lime-700">
             <CalendarCheck className="size-5" /> Book an Appointment
           </BookButton>
-          <a href={whatsappLink(`Hi Fortius, I'd like to consult about ${t.name}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-2 rounded-md border border-white/20 px-7 font-semibold transition hover:border-lime hover:text-lime-300">
+          <a href={whatsappLink(`Hi Fortius, I'd like to consult about ${t.name}.`)} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-2 rounded-md border border-ink/20 px-7 font-semibold transition hover:border-lime-700 hover:text-lime-700">
             <MessageCircle className="size-5" /> Ask on WhatsApp
           </a>
         </div>

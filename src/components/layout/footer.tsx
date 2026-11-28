@@ -14,7 +14,7 @@ export function Footer() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-8 border-b border-ink/10 py-16 lg:flex-row lg:items-end">
           <h2 className="h-display max-w-3xl text-4xl leading-[1.05] sm:text-6xl">
-            Ready to get started <span className="text-muted">with Fortius?</span>
+            Ready to get started <span className="text-gradient">with Fortius?</span>
           </h2>
           <div className="flex flex-wrap gap-3">
             <BookButton className="inline-flex h-14 items-center gap-2 rounded-md bg-lime px-7 font-bold text-white transition hover:bg-lime-700">
@@ -48,7 +48,7 @@ export function Footer() {
             {[["Home", "/"], ["About Us", "/about"], ["Our Doctors", "/doctors"], ["Treatments", "/treatments"], ["Gallery", "/gallery"], ["Awards", "/awards"], ["Testimonials", "/testimonials"], ["Contact", "/contact"]].map(([l, h]) => (
               <li key={h}><Link href={h} className="transition hover:text-lime-700">{l}</Link></li>
             ))}
-            <li><a href={site.blogUrl} target="_blank" rel="noopener noreferrer" className="transition hover:text-lime-700">Blog</a></li>
+            <li><Link href="/blog" className="transition hover:text-lime-700">Blog</Link></li>
           </ul>
         </div>
 

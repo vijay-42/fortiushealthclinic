@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Awards & Certificates", description:
 export default function AwardsPage() {
   return (
     <>
-      <PageHero eyebrow="Awards" title={<>Our Awards &amp; <span className="text-white/50">Certificates</span></>} text={accolade.text} image="/images/banners/award2.webp" crumbs={[{ label: "About", href: "/about" }, { label: "Awards" }]} />
+      <PageHero eyebrow="Awards" title={<>Our Awards &amp; <span className="text-lime-700">Certificates</span></>} text={accolade.text} image="/images/banners/award2.webp" crumbs={[{ label: "About", href: "/about" }, { label: "Awards" }]} />
       <section className="py-20 lg:py-28">
         <div className="container-x">
           <div className="grid gap-5 md:grid-cols-2">

@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Physician", name: doctor.name, description: doctor.long, image: doctor.image, medicalSpecialty: "Sexual health", worksFor: { "@type": "MedicalClinic", name: "Fortius Health Clinic" } }} />
-      <PageHero eyebrow="Best Sex Doctor In Bangalore" title={<>Best Sexologist <span className="text-white/50">in Bangalore</span></>} text={about.homeIntro[1]} image="/images/gallery/exterior-1.jpg" crumbs={[{ label: "About Us" }]} />
+      <PageHero eyebrow="Best Sex Doctor In Bangalore" title={<>Best Sexologist <span className="text-lime-700">in Bangalore</span></>} text={about.homeIntro[1]} image="/images/gallery/exterior-1.jpg" crumbs={[{ label: "About Us" }]} />
 
       <section className="py-24 lg:py-32">
         <div className="container-x grid items-center gap-16 lg:grid-cols-2">
@@ -46,7 +46,7 @@ export default function AboutPage() {
               <RevealItem key={s.label}>
                 <div className={i % 2 ? "rounded-xl border border-line bg-cream p-8" : "rounded-xl bg-block p-8 text-ink"}>
                   <p className="h-display text-5xl sm:text-6xl"><Counter value={s.value} suffix={s.suffix} decimals={s.decimals} /></p>
-                  <p className={i % 2 ? "mt-2 font-semibold text-muted" : "mt-2 font-semibold text-white/60"}>{s.label}</p>
+                  <p className={i % 2 ? "mt-2 font-semibold text-muted" : "mt-2 font-semibold text-ink-soft"}>{s.label}</p>
                 </div>
               </RevealItem>
             ))}
@@ -79,7 +79,7 @@ export default function AboutPage() {
         <div className="container-x">
           <Reveal className="max-w-2xl">
             <span className="eyebrow">Video testimonial</span>
-            <h2 className="h-display mt-5 text-4xl sm:text-5xl">What patients say about <span className="text-muted">Fortius</span></h2>
+            <h2 className="h-display mt-5 text-4xl sm:text-5xl">What patients say about <span className="text-gradient">Fortius</span></h2>
           </Reveal>
           <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
             {videoTestimonials.map((t) => <RevealItem key={t.name}><TestimonialCard t={t} /></RevealItem>)}

@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
   const all = [...testimonials, ...videoTestimonials];
   return (
     <>
-      <PageHero eyebrow="Testimonial" title={<>Let’s see what our patients <span className="text-white/50">say about us</span></>} text="Real stories from men and couples who trusted Fortius with their health." image="/images/gallery/interior-3.jpg" crumbs={[{ label: "Testimonials" }]}>
+      <PageHero eyebrow="Testimonial" title={<>Let’s see what our patients <span className="text-lime-700">say about us</span></>} text="Real stories from men and couples who trusted Fortius with their health." image="/images/gallery/interior-3.jpg" crumbs={[{ label: "Testimonials" }]}>
         <BookButton className="inline-flex h-12 items-center rounded-md bg-lime px-6 font-bold text-white">Start your own story</BookButton>
       </PageHero>
       <section className="py-16 lg:py-24">

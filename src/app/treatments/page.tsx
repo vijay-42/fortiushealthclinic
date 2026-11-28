@@ -17,12 +17,12 @@ export default function TreatmentsPage() {
     <>
       <PageHero
         eyebrow="Treatments & Services"
-        title={<>Care for every aspect of <span className="text-white/50">men’s sexual health</span></>}
+        title={<>Care for every aspect of <span className="text-lime-700">men’s sexual health</span></>}
         text={conditionsShowcase.text}
         image="/images/gallery/interior-3.jpg"
         crumbs={[{ label: "Treatments" }]}
       >
-        <Link href="#care-finder" className="inline-flex h-12 items-center gap-2 rounded-md bg-white/10 px-6 font-semibold transition hover:bg-lime hover:text-white">
+        <Link href="#care-finder" className="inline-flex h-12 items-center gap-2 rounded-md bg-white/70 px-6 font-semibold transition hover:bg-lime hover:text-white">
           Not sure? Use the Care Finder <ArrowRight className="size-4" />
         </Link>
       </PageHero>

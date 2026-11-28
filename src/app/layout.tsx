@@ -10,6 +10,7 @@ import { SearchProvider } from "@/components/interactive/search";
 import { DiscreetTitle } from "@/components/interactive/discreet-title";
 import { SmoothScroll } from "@/components/interactive/smooth-scroll";
 import { JsonLd } from "@/components/ui/json-ld";
+import { ScrollProgress } from "@/components/ui/fx";
 
 const body = Hanken_Grotesk({ variable: "--font-body", subsets: ["latin"], display: "swap" });
 const display = Schibsted_Grotesk({ variable: "--font-heading", subsets: ["latin"], display: "swap", weight: ["500", "600", "700", "800"] });
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export const viewport: Viewport = { themeColor: "#fbeedd" };
+export const viewport: Viewport = { themeColor: "#fdeedb" };
 
 const clinicSchema = {
   "@context": "https://schema.org",
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <JsonLd data={clinicSchema} />
+        <ScrollProgress />
         <SearchProvider>
           <BookingProvider>
             <Header />
