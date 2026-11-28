@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 
 export function FaqEnquiry({ faqs }: { faqs: Faq[] }) {
   return (
-    <section id="faqs" className="bg-cream py-24 lg:py-32">
+    <section id="faqs" className="bg-lime-50 py-24 lg:py-32">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
       <div className="container-x grid gap-14 lg:grid-cols-2">
         <div>

@@ -24,7 +24,7 @@ export function CareJourney() {
   const { open } = useBooking();
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-cream py-24 lg:py-32">
       <div className="container-x">
         <SectionHeading align="center" eyebrow="Your visit" title={<>Four simple steps to <span className="text-accent">feeling like yourself</span></>} text="From the first call to your last follow-up, every step is private, unhurried and focused on you." />
 

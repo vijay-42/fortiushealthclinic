@@ -46,12 +46,12 @@ export function Header() {
   return (
     <>
       {/* Top info bar */}
-      <div className="hidden bg-block text-[0.8rem] text-ink-soft lg:block">
+      <div className="hidden bg-lime-700 text-[0.8rem] text-white/90 lg:block">
         <div className="container-x flex h-10 items-center justify-between">
           <p>Confidential men’s sexual health care · Richards Town &amp; HSR Layout, Bangalore</p>
           <div className="flex items-center gap-6">
-            <a href={`mailto:${site.emails[0]}`} className="transition hover:text-lime-700">{site.emails[0]}</a>
-            <a href={`tel:${site.phone.tel}`} className="flex items-center gap-1.5 font-semibold text-ink transition hover:text-lime-700"><Phone className="size-3.5" /> {site.phone.display}</a>
+            <a href={`mailto:${site.emails[0]}`} className="transition hover:text-white">{site.emails[0]}</a>
+            <a href={`tel:${site.phone.tel}`} className="flex items-center gap-1.5 font-semibold text-white transition hover:text-orange"><Phone className="size-3.5" /> {site.phone.display}</a>
           </div>
         </div>
       </div>

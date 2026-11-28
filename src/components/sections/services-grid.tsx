@@ -13,7 +13,7 @@ const servicesIntro =
 export function ServicesGrid() {
   const items = featured.map((s) => treatments.find((t) => t.slug === s)!);
   return (
-    <section className="relative overflow-hidden bg-cream py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-lime-50 py-24 lg:py-32">
       <div className="container-x relative">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
           <SectionHeading eyebrow="Services" title={<>Male Sexual Health Services at Fortius Health Clinic – <span className="text-accent">Trusted Sexologist in Bangalore</span></>} titleClassName="lg:text-[2.6rem]! lg:leading-[1.1]!" />

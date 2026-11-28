@@ -48,7 +48,7 @@ export function ClinicTour() {
   };
 
   return (
-    <section className="overflow-hidden bg-cream py-24 lg:py-32">
+    <section className="overflow-hidden bg-lime-50 py-24 lg:py-32">
       <div className="container-x flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
         <SectionHeading eyebrow="Clinic tour" title={<>Step inside <span className="text-accent">before you visit</span></>} text="Knowing where you’re going makes the first visit easier. Take a quick look around our clinic." />
         <div className="flex items-center gap-3">

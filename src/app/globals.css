@@ -66,7 +66,7 @@
   .eyebrow, .eyebrow-dark {
     @apply inline-flex items-center gap-3 text-[0.72rem] font-semibold tracking-[0.2em] uppercase;
   }
-  .eyebrow::before, .eyebrow-dark::before { content: ""; @apply h-px w-7 bg-current; }
+  .eyebrow::before, .eyebrow-dark::before { content: ""; @apply h-0.5 w-7 bg-orange; }
   .eyebrow { @apply text-lime-700; }
   .eyebrow-dark { @apply text-lime-700; }
   .h-display { @apply font-display font-semibold tracking-[-0.03em] text-balance; }
